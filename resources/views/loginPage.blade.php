@@ -5,7 +5,7 @@
     <title>Login | Loveworld Live Tv</title>
     <meta name="description" content="Responsive, Bootstrap, BS4">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- style -->
-    <link rel="stylesheet" href="{{ asset('assets/css/site.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/css/site.min.css') }}">
 </head>
 <body class="layout-column" style="background-image: url('{{ asset('assets/img/z50.jpg')}}'); background-size: cover">
 
@@ -18,7 +18,7 @@
                     <!-- {{-- @include('alert') --}} -->
                     <div class="p-4 d-flex flex-column">
                         <a href="#" class="navbar-brand align-self-center">
-                            <img src="{{ asset('assets/img/logo.png') }}" alt="..."><span class="hidden-folded d-inline l-s-n-1x align-self-center">
+                            <img src="{{ asset('/assets/img/logo.png') }}" alt="..."><span class="hidden-folded d-inline l-s-n-1x align-self-center">
                           Loveworld Live Tv</span>
                         </a>
                     </div>
