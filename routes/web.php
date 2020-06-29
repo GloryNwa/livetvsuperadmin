@@ -11,18 +11,18 @@
 |
 */
 
-// Route::get('/', function () {
-//     // return view('welcome');
-// });
+Route::get('/', function () {
+    Route::post('/login', 'UserController@login')->name("login");
+});
 
-// Auth::routes();
+Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
-// // Route::get('/users/input', 'HomeController@users');
-// // Route::post('adduser', 'HomeController@adduser');
+// Route::get('/users/input', 'HomeController@users');
+// Route::post('adduser', 'HomeController@adduser');
 
-// // Route::get('/user/data', 'HomeController@data');
-// // Route::put('/updateData/{id}', 'HomeController@update');
+// Route::get('/user/data', 'HomeController@data');
+// Route::put('/updateData/{id}', 'HomeController@update');
 
 
 
