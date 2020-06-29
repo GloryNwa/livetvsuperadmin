@@ -11,21 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    Route::post('/login', 'UserController@login')->name("login");
-});
-
-Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/users/input', 'HomeController@users');
-// Route::post('adduser', 'HomeController@adduser');
-
-// Route::get('/user/data', 'HomeController@data');
-// Route::put('/updateData/{id}', 'HomeController@update');
-
-
-
 Route::post('/login', 'UserController@login')->name("login");
 Route::get('/login', 'UserController@loginPage')->name("loginPage");
 
@@ -56,3 +41,17 @@ Route::get('/create/anouncement','AnnouncementController@anouncement')->name("an
 Route::post('/postAnnouncement','AnnouncementController@postAnnouncement')->name("postAnnouncement");
 });
 
+
+
+// Route::get('/', function () {
+//     Route::post('/login', 'UserController@login')->name("login");
+// });
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/users/input', 'HomeController@users');
+// Route::post('adduser', 'HomeController@adduser');
+
+// Route::get('/user/data', 'HomeController@data');
+// Route::put('/updateData/{id}', 'HomeController@update');

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Login | Loveworld Live Tv</title>
-    <meta name="description" content="Responsive, Bootstrap, BS4">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- style -->
-    <link rel="stylesheet" href="{{ asset('assets/css/site.min.css') }}">
+<meta charset="utf-8">
+<title>Super Admin | Loveworld Live Tv</title>
+<meta name="description" content="Responsive, Bootstrap, BS4">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- style -->
+<link rel="stylesheet" href="/assets/css/site.min.css">
+<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head>
 <body class="layout-column" style="background-image: url('{{ asset('assets/img/z50.jpg')}}'); background-size: cover">
 
