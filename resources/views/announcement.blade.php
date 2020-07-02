@@ -1,5 +1,4 @@
 @include ('includes/header')
-
 <!-- sidenav bottom -->
 <div class="no-shrink">
 <div class="p-3 d-flex align-items-center">
@@ -9,117 +8,80 @@
 </div>
 <div class="flex"><!-- ############ Content START-->
 <div id="content" class="flex"><!-- ############ Main START-->
-<div class="page-container">
-<div class="padding sr">
-<h5 class="text-highlight sr-item">Featured Videos</h5>
-<div class="heading py-12 d-flex">
 <div>
-<div class="text-muted text-sm sr-item">Weekly</div>
-
-<span class="flex"></span></div>
-<div class="slick slick-visible slick-arrow-top row sr-item" data-plugin="slick" data-option="{
-slidesToShow: 6,
-slidesToScroll: 1,
-dots: false,
-rtl: false,
-responsive: [
-{
-breakpoint: 1200,
-settings: {
-slidesToShow: 6
-}
-},
-{
-breakpoint: 920,
-settings: {
-slidesToShow: 4
-}
-},
-{
-breakpoint: 768,
-settings: {
-slidesToShow: 3
-}
-},
-{
-breakpoint: 576,
-settings: {
-slidesToShow: 2
-}
-}
-]
-}">
-@if(session()->has('message'))
-  <div class="alert alert-success">
-      {{ session()->get('message') }}
-  </div>
-@endif
-  
-<table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
-                 
-<thead>
-<tr>
-<th>ID</th>
-<th>Video banner</th>
-<th>Title</th>
-<th>Category</th>
-<th>Date</th>
-
-<th class="">Actions</th>                   
-</tr>
-</thead>
-
-<tbody>
-@if(count($featured->data) > 0)
-<?php $x = 1;?>
-
-@foreach($featured->data as $vid)
-
-<tr> 
-<td>{{$x++}}</td>    
-<td><div><a href="">
-<div class="media" style="width: 108px; height: 60px;"><a href=""class="ajax media-content" style="background-image:url('{{$vid->banner}}')" data-pjax-state=""></a><div class="media-action media-action-overlay"></a>
-
-<button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
-
-<div class="dropdown-menu dropdown-menu-right"></div></div></div>
-</a></div>
-</td>
-<td>
-<div class="">{{$vid->title}}...</a></div>
-</td> 
-<td>"{{$vid->category_name}} </td> 
-<td>{{$vid->created_at}}</td> 
-
-<td class="text-right"  style="width:60px">
-<ul class="nav nav-pills">
-<li role="presentation">
-<a onclick="return confirm('Are you really sure?')" href="/delete/video/{{$vid->video_id}}">
-<span class="fa fa-trash" style="color:red;"> Delete</span> 
-</a>
-</li>
-</ul>
-</td>
-
-</tr>
-@endforeach 
-
-@else
-@if(count($featured) <= 0)
-<div class="alert alert-info" style="width:100%">{{$vid->message}}</div>
-@endif
-@endif                                        
-</tbody>                 
-</table>
-
-</div><!-- ############ Main END--></div><!-- ############ Content END--><!-- ############ Footer START-->
-<div id="footer" class="page-footer">
-<div class="d-flex p-3"><span class="text-sm flex">&copy; Copyright. Internet Multimedia</span>
-<div class="text-sm ">Version 1.1.2</div>
+<div class="page-hero page-container" id="page-hero">
+<div class="padding d-flex">
+<div class="page-title"><h2 class="text-md text-highlight">Announcement Blade</h2>
+<small>Welcome, <strong>{{Session::get('name')}}</strong></small>
 </div>
-</div><!-- ############ Footer END--></div>
+<div class="flex"></div>
 </div>
 </div>
+<div class="main-panel">
+     
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                  <i class="material-icons"></i>
+                    </div>
+                    <h4 class="card-title"><br><small></small></h4></div>
+                   <div class="card-body">
+                    <div class="table-responsive">
+                      
+                    <table id="datatables" class="table table-striped table-no-bordered table-hover" cellspacing="0" width="100%" style="width:100%">
+                    <thead>
+                        <tr>
+                          <th>ID</th>
+                          <th>Title</th>
+                          <th>Announcement</th>
+                          <th>Description</th>
+                          <th>Date</th>
+                         
+                          <th class="">Actions</th>                   
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <?php $x = 1;?>
+                      @foreach($announce->data as $vid)
+                      <tr> 
+                      <td>{{$x++}}</td>  
+                      <td><div class="">{{$vid->title}}...</a></div></td> 
+                          <td>"{{$vid->description}} </td> 
+                          <td>"{{$vid->button_text}} </td> 
+                          <td>{{$vid->created_at}}</td> 
+
+                                    
+                           <td class="text-right"  style="width:60px">
+                             <ul class="nav nav-pills">
+                            
+                             </li>&nbsp;&nbsp;&nbsp;
+                             <li role="presentation">
+                            <a onclick="return confirm('Are you really sure?')" href="/delete/announcement">
+                               <span class="fa fa-trash" style="color:red;"> Delete</span> 
+                              </a>
+                          </li>
+
+                            </ul>
+                          </td>
+                        </tr>  
+                        @endforeach                    
+                     </tbody>                 
+                    </table>
+                  </div>
+                </div>
+                <!-- end content-->
+              </div>
+              <!--  end card  -->
+            </div>
+            <!-- end col-md-12 -->
+          </div>
+          <!-- end row -->
+        </div>
+      </div>
 <script src="/assets/js/site.min.js"></script>
   <!--   Core JS Files   -->
   <script src="/assets1/js/core/jquery.min.js"></script>
@@ -321,7 +283,7 @@ slidesToShow: 2
     });
   </script>
   <!-- Sharrre libray -->
-  <script src="/assets/demo/jquery.sharrre.js"></script>
+  <script src="assets/demo/jquery.sharrre.js"></script>
   <script>
     $(document).ready(function() {
 

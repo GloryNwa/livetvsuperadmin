@@ -83,7 +83,7 @@ style="background-image:url('assets/img/c2.jpg'); border-radius: 5px 5px 0px 0px
 
 
 <div class="list list-row">
-@foreach($res->data as $vid) 
+@foreach($resp->data->recent_videos as $vid) 
 <div class="list-item" data-id="8">
 <div><a href="#">
     <div class="media" style="width: 108px; height: 60px;"><a href="#" class="ajax media-content" style="background-image:url({{$vid->banner}})" data-pjax-state=""></a><div class="media-action media-action-overlay">
@@ -100,9 +100,11 @@ style="background-image:url('assets/img/c2.jpg'); border-radius: 5px 5px 0px 0px
   <circle cx="5" cy="12" r="1"></circle></svg></button>
   <div class="dropdown-menu dropdown-menu-right"></div></div></div>
 </a></div>
-<div class="flex" ><a href="#" class="item-author text-color">{{substr($vid->title,0,19)}}...</a></div>
 
-<div class="flex"><a href="https://play.google.com/store/apps/details?id=org.lwnm.digitallib&hl=en"  class="item-author text-color">{{$vid->category_name}}</a></div>
+<div class="flex" ><a href="#" class="item-author text-color">{{$vid->title}}...</a></div>
+
+<div class=""><a href="https://play.google.com/store/apps/details?id=org.lwnm.digitallib&hl=en"  class="item-author text-color" style="text-align:center">{{$vid->owner_id}}  </a></div>
+<!-- category name -->
 <div><a href="#" class="item-author text-color">{{$vid->created_at}}</a></div>
 </div>
 @endforeach
@@ -198,6 +200,6 @@ style="background-image:url(assets/img/z1.jpg)"></span></a>
 <div class="text-sm">Version 1.1.2</div>
 </div>
 </div><!-- ############ Footer END--></div>
-<script src="assets/js/site.min.js"></script>
+<script src="/assets/js/site.min.js"></script>
 </body>
 </html>

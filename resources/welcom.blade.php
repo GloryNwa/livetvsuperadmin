@@ -23,7 +23,7 @@
                           Loveworld Live Tv</span>
                         </a>
                     </div>
-                    <form class="" role="form" action="{{route('login') }}" method="POST">
+                    <form class="" role="form" action="{{ url('/login') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label>Email</label>

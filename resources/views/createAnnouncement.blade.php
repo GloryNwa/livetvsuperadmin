@@ -14,6 +14,7 @@
 <div class="padding d-flex">
 <div class="page-title"><h2 class="text-md text-highlight">Create Announcement</h2>
 </div>
+
 <div class="flex"></div>
 </div>
 </div>
@@ -21,7 +22,13 @@
 <div class="padding">
 <div class="row">
 <div class="col-sm-12">
-<form data-plugin="parsley" data-option="{}">
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+ @endif
+<form data-plugin="parsley" method="post" action="{{route('postAnnouncement')}}">
+@csrf
 <div class="card">
 <div class="card-header"></div>
 <div class="card-body">
@@ -37,7 +44,7 @@
 <label>Text</label><input type="text" name="text" class="form-control" required>
 </div>
 <div class="form-group col-sm-6">
-<label>Link</label><input type="text" name="link" class="form-control"required>
+<label>Date</label><input type="text" name="time" class="form-control"required>
 </div>
 </div>
 <div class="text-left">

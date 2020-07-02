@@ -11,8 +11,15 @@
 |
 */
 
+
+Route::get('/', function () {
+    return view('loginPage');
+Route::get('/login', 'UserController@loginPage')->name('loginPage');
+
+
+});
 Route::post('/login', 'UserController@login')->name("login");
-Route::get('/login', 'UserController@loginPage')->name("loginPage");
+
 
 // Route::group(['middleware'=>['auth']], function (){
 Route::group(['middleware' => ['CheckUser']], function(){
@@ -28,6 +35,14 @@ Route::get('/edit/video', 'VideoController@edit_video')->name("edit_video");
 Route::get('/video/details', 'VideoController@video_detail')->name("video_details");
 Route::get('/upload/video', 'VideoController@upload_video')->name("upload_video");
 Route::post('/uploadvideos', 'VideoController@uploadvideos')->name("uploadvideos");
+Route::get('/featured/videos', 'VideoController@featuredVideo')->name("featuredVideo");
+Route::get('/create/featured/videos', 'VideoController@createFeaturedVideo')->name("createFeaturedVideo");
+Route::post('/post/video', 'VideoController@postVideo')->name("postVideo");
+Route::get('delete/video/{id}', 'VideoController@deleteVideo')->name("deleteVideo");
+Route::get('all/category', 'VideoController@category')->name("category");
+Route::get('/create/category','VideoController@createCategory')->name("createCategory");
+Route::post('/postCategory','VideoController@postCategory')->name("postCategory");
+
 
 Route::get('/stations','StationController@stations')->name("stations");
 Route::get('/station/details', 'StationController@station_details')->name("station_details");
@@ -35,10 +50,17 @@ Route::get('/station/profile/{id}','StationController@stationProfile')->name("st
 Route::post('/stationsprofile/{id}', 'StationController@stationsprofile')->name("stationsprofile");
 
 
-Route::get('/create/featured/video', 'AnnouncementController@featuredVideo')->name("featuredVideo");
+// Route::get('/create/featured/video', 'AnnouncementController@featuredVideo')->name("featuredVideo");
 Route::get('/manage/banners', 'AnnouncementController@manageBanners')->name("manageBanners");
-Route::get('/create/anouncement','AnnouncementController@anouncement')->name("anouncement");
+Route::get('/create/banners', 'AnnouncementController@createBanners')->name("createBanners");
+Route::post('/post/banners', 'AnnouncementController@postBanners')->name("postBanners");
+
+Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");
 Route::post('/postAnnouncement','AnnouncementController@postAnnouncement')->name("postAnnouncement");
+Route::get('announcement','AnnouncementController@announcement')->name("announcement");
+Route::get('/edit/announcement','AnnouncementController@editAnnouncement')->name("editAnnouncement");
+Route::get('/edit/announcement','AnnouncementController@edit')->name("edit");
+Route::get('delete/announcement/{id}', 'VideoController@delete')->name("delete");
 });
 
 

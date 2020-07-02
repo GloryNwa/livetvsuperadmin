@@ -103,7 +103,7 @@ class UserController extends Controller
               return redirect('/dashboard');
              
             }else{
-              return redirect('/login');
+              return redirect('/');
             }
    }
   
@@ -112,7 +112,7 @@ class UserController extends Controller
  //////////////////////////////Logout bMethod//////////////////////////////////////
    public function logout(){
       session()->flush();
-      return redirect('login');      
+      return redirect('/');      
   }
   
   //   public function logout(){

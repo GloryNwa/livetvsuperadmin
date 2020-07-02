@@ -54,19 +54,18 @@
                           <td>{{$user->email}}</td>
                           <td>{{$user->created_at}}</td> 
                                     
-                           <td class="text-right"  style="width:60px">
+                           <td class="text-right" style="width:80px">
                              <ul class="nav nav-pills">
                              <li role="presentation">
-                               <a href="">
-                               <i class="material-icons">edit</i> 
-                               </a>
-                            </li>
-                             </li>&nbsp;&nbsp;&nbsp;
-                              <li role="presentation">
-                                <a  href=''onclick='return confirm("Are you really sure?")'>
-                                <i class="material-icons">delete</i>
-                                </a>
-                              </li>
+                             <a href='#'>
+                              <span class="fa fa-pencil" style="color:#009efb;">Edit</span>  
+                             </a>
+                          </li>
+                           <li role="">
+                              <a onclick="return confirm('Are you really sure?')" href='#'>
+                               <span class="fa fa-trash" style="color:red;"> Delete</span> 
+                              </a>
+                          </li>
                             </ul>
                           </td>
                         </tr>  
@@ -285,7 +284,7 @@
     });
   </script>
   <!-- Sharrre libray -->
-  <script src="assets/demo/jquery.sharrre.js"></script>
+  <script src="/assets/demo/jquery.sharrre.js"></script>
   <script>
     $(document).ready(function() {
 

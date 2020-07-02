@@ -75,6 +75,16 @@ class="nav-badge"></span></a></li>
 data-feather="users"></i></span> <span class="nav-text">Users</span> <span
 class="nav-badge"></span></a></li>
 
+<li class="nav-header hidden-folded"><span class="text-muted">Category</span></li>
+<li><a href='{{route("createCategory")}}'><span class="nav-icon"><i
+data-feather="settings"></i></span> <span class="nav-text">Create Category</span> <span
+class="nav-badge"></span></a></li>
+<li><a href='{{route("category")}}'><span class="nav-icon"><i
+data-feather="settings"></i></span> <span class="nav-text">All Category</span> <span
+class="nav-badge"></span></a></li>
+
+
+
 <li class="nav-header hidden-folded"><span class="text-muted">View Stations</span></li>
 
 <li><a href='{{route("stations")}}'><span class="nav-icon"><i
@@ -83,18 +93,32 @@ class="nav-badge"></span></a></li>
 
 
 <li class="nav-header hidden-folded"><span class="text-muted">Manage Banners</span></li>
-<li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
+<!-- <li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
 data-feather="settings"></i></span> <span class="nav-text">Banners</span> <span
+class="nav-badge"></span></a></li> -->
+
+<li><a href='{{route("createBanners")}}'><span class="nav-icon"><i
+data-feather="settings"></i></span> <span class="nav-text">Create Banners</span> <span
 class="nav-badge"></span></a></li>
+
 
 <li class="nav-header hidden-folded"><span class="text-muted">Create Announcement</span></li>
-
-<li><a href='{{route("anouncement")}}'><span class="nav-icon"><i
+<li><a href='{{route("announcement")}}'><span class="nav-icon"><i
 data-feather="pencil"></i></span> <span class="nav-text">Announcement</span> <span
 class="nav-badge"></span></a></li>
+
+<li><a href='{{route("createAnnouncement")}}'><span class="nav-icon"><i
+data-feather="pencil"></i></span> <span class="nav-text">Create Announcement</span> <span
+class="nav-badge"></span></a></li>
+
+
 <li class="nav-header hidden-folded"><span class="text-muted">Featured Videos</span></li>
 <li><a href='{{route("featuredVideo")}}'><span class="nav-icon"><i
 data-feather="film"></i></span> <span class="nav-text">Featured Videos</span> <span
+class="nav-badge"></span></a></li>
+
+<li><a href='{{route("createFeaturedVideo")}}'><span class="nav-icon"><i
+data-feather="pencil"></i></span> <span class="nav-text">Create Featured Video</span> <span
 class="nav-badge"></span></a></li>
 <!--  -->
 </ul>
