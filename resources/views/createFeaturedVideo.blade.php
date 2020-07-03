@@ -27,7 +27,7 @@
         {{ session()->get('message') }}
     </div>
  @endif
-<form data-plugin="parsley" method="post" action="{{route('postCategory')}}">
+<form data-plugin="parsley" method="post" action="{{route('postVideo')}}">
 @csrf
 <div class="card">
 <div class="card-header"></div>
@@ -38,7 +38,19 @@
 <label>Title</label><input type="text" name="title" class="form-control" required>
 </div>
 <div class="form-group col-sm-6">
-<label>video Category</label><input type="text" name="cat" class="form-control" required>
+<label>Category ID</label><input type="text" name="cat_id" class="form-control" required>
+</div>
+<div class="form-group col-sm-6">
+<label>Video Category</label><input type="text" name="category" class="form-control" required>
+</div>
+<div class="form-group col-sm-6">
+<label>Station ID</label><input type="text" name="station_id" class="form-control" required>
+</div>
+<div class="form-group col-sm-6">
+<label>Video ID</label><input type="text" name="video_id" class="form-control" required>
+</div>
+<div class="form-group col-sm-6">
+<label>Date</label><input type="text" name="created_at" class="form-control" required>
 </div>
 <div class="form-group col-sm-6">
 <label>Upload Banner</label><input type="file" name="banner" class="form-control" required>

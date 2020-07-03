@@ -21,10 +21,13 @@ style="background-image:url(assets/img/minister.jpg)"></a>
 <div class="list-body p-5 col-md-6">
 <a href="video.detail.php#"
 class="list-title title ajax text-lg font-weight-bold mb-4 l-h-1x">Watch Pastor Chris Teachings Live and be Blessed </a><a href="page.profile.html#"
-                                                                                                                class="list-subtitle d-block text-muted subtitle ajax">The Lord giveth wisdom and out of his mouth commeth knowledge and understanding</a>
-<div class="mt-4"><a href="video.detail.php"
+                                                                                                                class="list-subtitle d-block text-muted subtitle ajax">
+                                                                                                                <!-- The Lord giveth wisdom and out of his mouth commeth knowledge and understanding -->
+                                                                                                                
+                                                                                                                </a>
+<!-- <div class="mt-4"><a href="video.detail.php"
         class="ajax btn btn-outline-primary b-2x btn-md mx-3">More Episodes</a>
-</div>
+</div> -->
 </div>
 </div>
 </div>

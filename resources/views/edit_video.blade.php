@@ -12,7 +12,7 @@
 <div>
 <div class="page-hero page-container" id="page-hero">
 <div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Edit Your Video</h2>
+<div class="page-title"><h2 class="text-md text-highlight">Edit Video</h2>
 </div>
 <div class="flex"></div>
 </div>

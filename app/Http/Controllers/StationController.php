@@ -73,18 +73,17 @@ class StationController extends Controller
   
       public function stationsProfile(Request $request,$id){
         $this->validate($request, [
-          'name'  => 'required',
-          'desc' => 'required',
-          'url'  => 'required',
-          'email' => 'required',
-          'paypal_id'  => 'required',
-          'phone' => 'required',
-          'donateurl'  => 'required',
-          'weburl' => 'required',
-          'scheduleurl'  => 'required',
-          'kingspay' => 'required',
-          'unique_id'  => 'required',
-          'banner' => 'required'
+          'name'  => '',
+          'desc' => '',
+          'email' => '',
+          'paypal_id'  => '',
+          'phone' => '',
+          'donateurl'  => '',
+          'weburl' => '',
+          'scheduleurl'  => '',
+          'kingspay' => '',
+          'unique_id'  => '',
+          'banner' => ''
          
           ]);
   

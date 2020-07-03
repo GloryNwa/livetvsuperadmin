@@ -164,6 +164,26 @@ class VideoController extends Controller
      }
 
 
+     public function postVideo(Request $request){
+      $this->validate($request, [
+        'title'  => 'required',
+        'file' => 'required',
+        'banner' => 'required'
+        
+       
+        ]);
+
+        $featVideo = Session::get('user');
+              
+          return redirect()->back()->with('message', 'Featured Video uploaded successfully');
+        
+     
+    }
+
+    
+  
+
+
       public function featuredVideo(){
          $featured_token = Session::get('user');
          $curl = curl_init();

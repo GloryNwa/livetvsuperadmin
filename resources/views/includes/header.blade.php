@@ -25,7 +25,7 @@ class="hidden-folded d-inline l-s-n-1x w w-auto-sm">Loveworld Live Tv</span> </a
 
 <li class="nav-item dropdown"><a href="#" data-toggle="dropdown"
 class="nav-link d-flex align-items-center px-2 text-color"><span
-class="avatar w-24" style="margin: -2px"><img src="/assets/img/a0.jpg" alt="..."></span></a>
+class="avatar w-24" style="margin: -2px"><img src="/img/images.jpg" alt="..."></span></a>
 <div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn"><a class="dropdown-item"
     href=""><span>{{Session::get('name')}}</span>
 </a>
@@ -93,23 +93,23 @@ class="nav-badge"></span></a></li>
 
 
 <li class="nav-header hidden-folded"><span class="text-muted">Manage Banners</span></li>
-<!-- <li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
+<li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
 data-feather="settings"></i></span> <span class="nav-text">Banners</span> <span
-class="nav-badge"></span></a></li> -->
+class="nav-badge"></span></a></li>
 
 <li><a href='{{route("createBanners")}}'><span class="nav-icon"><i
 data-feather="settings"></i></span> <span class="nav-text">Create Banners</span> <span
 class="nav-badge"></span></a></li>
 
-
-<li class="nav-header hidden-folded"><span class="text-muted">Create Announcement</span></li>
+<li class="nav-header hidden-folded"><span class="text-muted">Announcement</span></li>
 <li><a href='{{route("announcement")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Announcement</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Announcement</span> <span
 class="nav-badge"></span></a></li>
 
 <li><a href='{{route("createAnnouncement")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Create Announcement</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Create Announcement</span> <span
 class="nav-badge"></span></a></li>
+<!--  -->
 
 
 <li class="nav-header hidden-folded"><span class="text-muted">Featured Videos</span></li>
@@ -118,8 +118,12 @@ data-feather="film"></i></span> <span class="nav-text">Featured Videos</span> <s
 class="nav-badge"></span></a></li>
 
 <li><a href='{{route("createFeaturedVideo")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Create Featured Video</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Create Featured Video</span> <span
 class="nav-badge"></span></a></li>
+
+<!-- <li><a href='{{route("createFeaturedVideo")}}'><span class="nav-icon"><i
+data-feather="pencil"></i></span> <span class="nav-text">Create Featured Video</span> <span
+class="nav-badge"></span></a></li> -->
 <!--  -->
 </ul>
 </li>

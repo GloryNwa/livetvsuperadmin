@@ -39,7 +39,10 @@
 <div class="form-group col-sm-6">
 <label>Description</label><input type="text" name="desc" class="form-control" required>
 </div>
-<div class="form-group col-sm-12">
+<div class="form-group col-sm-6">
+<label>Text</label><input type="text" name="link" class="form-control" required>
+</div>
+<div class="form-group col-sm-6">
 <label>Text</label><input type="file" name="banner" class="form-control" required>
 </div>
 

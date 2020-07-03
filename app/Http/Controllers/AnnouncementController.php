@@ -47,12 +47,13 @@ class AnnouncementController extends Controller
 
             'title' => 'required',
             'desc' => 'required',
-            'banner' => 'required' 
+            'banner' => 'required', 
+            'link' => 'required' 
       ]);
       $banner = Session::get('user');
       $curl = curl_init();
 
-        curl_setopt_array($curl, array(
+      curl_setopt_array($curl, array(
         CURLOPT_URL => "http://apis.livetvmobile.org/api/super/banner/upload",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
@@ -63,11 +64,12 @@ class AnnouncementController extends Controller
         CURLOPT_CUSTOMREQUEST => "POST",
         CURLOPT_POSTFIELDS => array('title' => 'testing','file'=> new CURLFILE('/C:/Users/Edwin Codes/Desktop/testUI.PNG'),'link' => 'http://apis.livetvmobile.org/api/banner/upload','description' => 'its just a test please ignore'),
         CURLOPT_HTTPHEADER => array(
-            "Authorization:$banner",
-            "Accept: application/json",
-            "Content-Type: application/x-www-form-urlencoded"
+          "Authorization:$banner",
+          "Accept: application/json",
+          "Content-Type: application/x-www-form-urlencoded"
         ),
-        ));
+      ));
+      
 
           return redirect()->back()->with('message', 'Banner uploaded successfully'); 
     }

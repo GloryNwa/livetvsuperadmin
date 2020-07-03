@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Dashboard | Loveworld Live Tv</title>
+<title>Super Admin | Loveworld Live Tv</title>
 <meta name="description" content="Responsive, Bootstrap, BS4">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- style -->
-<link rel="stylesheet" href="assets/css/site.min.css">
+<link rel="stylesheet" href="/assets/css/site.min.css">
+<link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head>
 <body class="layout-column">
 <header id="header" class="page-header bg-white b-b">
 <div class="navbar navbar-expand-lg"><!-- brand --> <a href="#" class="navbar-brand w w-auto-sm">
-<img src="assets/img/logo.png" alt="..."><span
+<img src="/assets/img/logo.png" alt="..."><span
 class="hidden-folded d-inline l-s-n-1x w w-auto-sm">Loveworld Live Tv</span> </a><!-- / brand -->
 <!-- Navbar collapse -->
 
@@ -24,7 +25,7 @@ class="hidden-folded d-inline l-s-n-1x w w-auto-sm">Loveworld Live Tv</span> </a
 
 <li class="nav-item dropdown"><a href="#" data-toggle="dropdown"
 class="nav-link d-flex align-items-center px-2 text-color"><span
-class="avatar w-24" style="margin: -2px"><img src="assets/img/a0.jpg" alt="..."></span></a>
+class="avatar w-24" style="margin: -2px"><img src="/img/images.jpg" alt="..."></span></a>
 <div class="dropdown-menu dropdown-menu-right w mt-3 animate fadeIn"><a class="dropdown-item"
     href=""><span>{{Session::get('name')}}</span>
 </a>
@@ -54,7 +55,7 @@ data-feather="menu"></i></a></li>
 <li><a href='{{route("dashboard")}}'><span class="nav-icon"><i data-feather="home"></i></span>
 <span class="nav-text">Dashboard</span></a></li>
 
-<li class="nav-header hidden-folded"><span class="text-muted">View Videos</span></li>
+<li class="nav-header hidden-folded"><span class="text-muted">Videos </span></li>
 
 <!-- <li><a href='{{route("create_video")}}'><span class="nav-icon"><i
 data-feather="video"></i></span> <span class="nav-text">Create Videos</span> <span
@@ -83,6 +84,7 @@ data-feather="settings"></i></span> <span class="nav-text">All Category</span> <
 class="nav-badge"></span></a></li>
 
 
+
 <li class="nav-header hidden-folded"><span class="text-muted">View Stations</span></li>
 
 <li><a href='{{route("stations")}}'><span class="nav-icon"><i
@@ -91,23 +93,23 @@ class="nav-badge"></span></a></li>
 
 
 <li class="nav-header hidden-folded"><span class="text-muted">Manage Banners</span></li>
-<!-- <li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
+<li><a href='{{route("manageBanners")}}'><span class="nav-icon"><i
 data-feather="settings"></i></span> <span class="nav-text">Banners</span> <span
-class="nav-badge"></span></a></li> -->
+class="nav-badge"></span></a></li>
+
 <li><a href='{{route("createBanners")}}'><span class="nav-icon"><i
 data-feather="settings"></i></span> <span class="nav-text">Create Banners</span> <span
 class="nav-badge"></span></a></li>
 
-
-
-<li class="nav-header hidden-folded"><span class="text-muted">Create Announcement</span></li>
+<li class="nav-header hidden-folded"><span class="text-muted">Announcement</span></li>
 <li><a href='{{route("announcement")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Announcement</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Announcement</span> <span
 class="nav-badge"></span></a></li>
 
 <li><a href='{{route("createAnnouncement")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Create Announcement</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Create Announcement</span> <span
 class="nav-badge"></span></a></li>
+<!--  -->
 
 
 <li class="nav-header hidden-folded"><span class="text-muted">Featured Videos</span></li>
@@ -115,10 +117,11 @@ class="nav-badge"></span></a></li>
 data-feather="film"></i></span> <span class="nav-text">Featured Videos</span> <span
 class="nav-badge"></span></a></li>
 
-
 <li><a href='{{route("createFeaturedVideo")}}'><span class="nav-icon"><i
-data-feather="pencil"></i></span> <span class="nav-text">Create Featured Video</span> <span
+data-feather="settings"></i></span> <span class="nav-text">Create Featured Video</span> <span
 class="nav-badge"></span></a></li>
+
+
 <!--  -->
 </ul>
 </li>

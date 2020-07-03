@@ -70,10 +70,10 @@ data-feather="users"></i></div>
 <div class="col-md-12 d-flex">
 <div class="card flex">
 <div class="p-3-4 bg-dark bg-img" data-stellar-background-ratio="0.1"
-style="background-image:url('assets/img/c2.jpg'); border-radius: 5px 5px 0px 0px;" data-plugin="stellar">
+style="background-image: url(img/z4.jpg); border-radius: 5px 5px 0px 0px;" data-plugin="stellar">
 <div class="d-flex">
 <div>
-<div style="font-size: medium">Recent Added Videos</div>
+<div style="font-size: medium" style="color:#244ac4 !important;">Recent Added Videos</div>
 <!-- <small class="text-muted">Total: 30</small> -->
 </div>
 <span class="flex"></span>

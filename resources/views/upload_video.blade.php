@@ -11,7 +11,7 @@
 <div>
 <div class="page-hero page-container" id="page-hero">
 <div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Upload Videos Here</h2>
+<div class="page-title"><h2 class="text-md text-highlight">Upload Videos</h2>
 
 </div>
 <div class="flex"></div>

@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="/assets/css/site.min.css">
 <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
 </head>
-<body class="layout-column" style="background-image: url('{{ asset('assets/img/z50.jpg')}}'); background-size: cover">
+<body class="bg-img" style="background-image: url(img/minister.jpg);">
 
 
 <div class="flex">

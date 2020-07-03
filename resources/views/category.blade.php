@@ -11,7 +11,7 @@
 <div>
 <div class="page-hero page-container" id="page-hero">
 <div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Category Blade</h2>
+<div class="page-title"><h2 class="text-md text-highlight">Category</h2>
 <small>Welcome, <strong>{{Session::get('name')}}</strong></small>
 </div>
 <div class="flex"></div>

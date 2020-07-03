@@ -37,7 +37,7 @@ Route::get('/upload/video', 'VideoController@upload_video')->name("upload_video"
 Route::post('/uploadvideos', 'VideoController@uploadvideos')->name("uploadvideos");
 Route::get('/featured/videos', 'VideoController@featuredVideo')->name("featuredVideo");
 Route::get('/create/featured/videos', 'VideoController@createFeaturedVideo')->name("createFeaturedVideo");
-Route::post('/post/video', 'VideoController@postVideo')->name("postVideo");
+Route::post('/postVideo', 'VideoController@postVideo')->name("postVideo");
 Route::get('delete/video/{id}', 'VideoController@deleteVideo')->name("deleteVideo");
 Route::get('all/category', 'VideoController@category')->name("category");
 Route::get('/create/category','VideoController@createCategory')->name("createCategory");
@@ -53,7 +53,7 @@ Route::post('/stationsprofile/{id}', 'StationController@stationsprofile')->name(
 // Route::get('/create/featured/video', 'AnnouncementController@featuredVideo')->name("featuredVideo");
 Route::get('/manage/banners', 'AnnouncementController@manageBanners')->name("manageBanners");
 Route::get('/create/banners', 'AnnouncementController@createBanners')->name("createBanners");
-Route::post('/post/banners', 'AnnouncementController@postBanners')->name("postBanners");
+Route::post('/postBanners', 'AnnouncementController@postBanners')->name("postBanners");
 
 Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");
 Route::post('/postAnnouncement','AnnouncementController@postAnnouncement')->name("postAnnouncement");
