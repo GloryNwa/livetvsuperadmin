@@ -57,7 +57,7 @@
                              <ul class="nav nav-pills">
                              <li role="presentation">
                             <a onclick="return confirm('Are you really sure?')" href="#">
-                               <span class="fa fa-trash"></span> 
+                               <span class="fa fa-trash"style="color:red;"></span> 
                               </a>
                           </li>
 

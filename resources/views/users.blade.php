@@ -63,7 +63,7 @@
                           </li>&nbsp;&nbsp;&nbsp;
                            <li role="">
                               <a onclick="return confirm('Are you really sure?')" href='#'>
-                               <span class="fa fa-trash"></span> 
+                               <span class="fa fa-trash"style="color:red;"></span> 
                               </a>
                           </li>
                             </ul>

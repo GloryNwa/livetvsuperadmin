@@ -188,7 +188,7 @@ class VideoController extends Controller
          $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/super/featured-videos/all?per_page=40&page=2",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/super/featured-videos/all?per_page=40",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,

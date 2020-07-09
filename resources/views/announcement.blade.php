@@ -61,7 +61,7 @@
                              </li>&nbsp;&nbsp;&nbsp;
                              <li role="presentation">
                             <a onclick="return confirm('Are you really sure?')" href="/delete/announcement">
-                               <span class="fa fa-trash" style="color:red;"> Delete</span> 
+                               <span class="fa fa-trash" style="color:red;"></span> 
                               </a>
                           </li>
 
