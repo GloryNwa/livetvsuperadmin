@@ -34,30 +34,10 @@
 <div class="card-body">
 <div class="form-row">
 
-<div class="form-group col-sm-6">
-<label>Title</label><input type="text" name="title" class="form-control" required>
+<div class="form-group col-sm-12">
+<label>Video Unique ID</label><input type="text" name="video_id" class="form-control" required>
 </div>
-<div class="form-group col-sm-6">
-<label>Category ID</label><input type="text" name="cat_id" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Video Category</label><input type="text" name="category" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Station ID</label><input type="text" name="station_id" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Video ID</label><input type="text" name="video_id" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Date</label><input type="text" name="created_at" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Upload Banner</label><input type="file" name="banner" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Upload Video</label><input type="file" name="video" class="form-control" required>
-</div>
+
 </div>
 <div class="text-left">
 <button type="submit" name="submit" class="btn btn-primary">Create</button>

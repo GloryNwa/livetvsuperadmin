@@ -7,6 +7,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><!-- style -->
 <link rel="stylesheet" href="/assets/css/site.min.css">
 <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body class="layout-column">
 <header id="header" class="page-header bg-white b-b">

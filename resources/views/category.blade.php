@@ -55,11 +55,9 @@
                                     
                            <td class="text-right"  style="width:60px">
                              <ul class="nav nav-pills">
-                            
-                             </li>&nbsp;&nbsp;&nbsp;
                              <li role="presentation">
                             <a onclick="return confirm('Are you really sure?')" href="#">
-                               <span class="fa fa-trash" style="color:red;"> Delete</span> 
+                               <span class="fa fa-trash"></span> 
                               </a>
                           </li>
 

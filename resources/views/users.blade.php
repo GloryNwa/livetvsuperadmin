@@ -58,12 +58,12 @@
                              <ul class="nav nav-pills">
                              <li role="presentation">
                              <a href='#'>
-                              <span class="fa fa-pencil" style="color:#009efb;">Edit</span>  
+                              <span class="fa fa-pencil" style="color:#009efb;"></span>  
                              </a>
-                          </li>
+                          </li>&nbsp;&nbsp;&nbsp;
                            <li role="">
                               <a onclick="return confirm('Are you really sure?')" href='#'>
-                               <span class="fa fa-trash" style="color:red;"> Delete</span> 
+                               <span class="fa fa-trash"></span> 
                               </a>
                           </li>
                             </ul>
