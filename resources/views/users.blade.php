@@ -41,7 +41,7 @@
                           <th>Email</th>
                           <th>Date</th>
                          
-                          <th class="">Actions</th>                   
+                          <!-- <th class="">Actions</th>                    -->
                         </tr>
                       </thead>
                       <tbody>
@@ -54,7 +54,7 @@
                           <td>{{$user->email}}</td>
                           <td>{{$user->created_at}}</td> 
                                     
-                           <td class="text-right" style="width:80px">
+                           <!-- <td class="text-right" style="width:80px">
                              <ul class="nav nav-pills">
                              <li role="presentation">
                              <a href='#'>
@@ -67,7 +67,7 @@
                               </a>
                           </li>
                             </ul>
-                          </td>
+                          </td> -->
                         </tr>  
                         @endforeach                    
                      </tbody>                 

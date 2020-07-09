@@ -39,8 +39,8 @@
                           <th>Category Name</th>
                           <th>Unique_id</th>
                          
-                         
-                          <th class="">Actions</th>                   
+<!--                          
+                          <th class="">Actions</th>                    -->
                         </tr>
                       </thead>
                       <tbody>
@@ -51,7 +51,7 @@
                       <td><div class="">{{$cat->name}}...</a></div></td> 
                           <td>"{{$cat->unique_id}} </td> 
                           
-
+<!-- 
                                     
                            <td class="text-right"  style="width:60px">
                              <ul class="nav nav-pills">
@@ -62,7 +62,7 @@
                           </li>
 
                             </ul>
-                          </td>
+                          </td> -->
                         </tr>  
                         @endforeach                    
                      </tbody>                 

@@ -41,7 +41,7 @@
                           <th>category </th>
                           <th>Station</th>
                           <th>Date</th>
-                         <th class="">Actions</th>                     
+                         <!-- <th class="">Actions</th>                      -->
                         </tr>
                       </thead>
                       <tbody>
@@ -62,7 +62,7 @@
                               <td>{{$vid->category_name}}</td>
                               <td>{{$vid->owner_name}}</td>
                               <td>{{$vid->created_at}}</td> 
-                                        
+<!--                                         
                            <td class="text-right" style="width:80px">
                              <ul class="nav nav-pills">
                              <li role="presentation">
@@ -76,7 +76,7 @@
                               </a>
                           </li>
                             </ul>
-                          </td>
+                          </td> -->
                         </tr>  
                         @endforeach                    
                      </tbody>                 
