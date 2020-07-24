@@ -1,205 +1,219 @@
-@include ('includes/nav')
+
+@include('includes/header')
+        <div class="page-wrapper">
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h3 class="page-title text-truncate text-dark font-weight-medium mb-1">Welcome, <small>{{Session::get('name')}} !</small> </h3>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                <li class="breadcrumb-item"><a href="#" class="text-muted"></a>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- *************************************************************** -->
+                <!-- Start First Cards -->
+                <!-- *************************************************************** -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-8">
+                        <div class="card bg-light-info border-0">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <a href="javascript:void(0)"
+                                        class="btn btn-info rounded-circle btn-circle-lg text-white mb-2">
+                                        <i data-feather="user-plus"></i>
+                                    </a>
+                                    <div class="ml-auto">
+                                        <span class="text-dark"><i class="text-info ti-arrow-up mr-1"></i>Users</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="mb-0 font-weight-medium">{{count($resp->data->users)}}</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0"></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8">
+                        <div class="card bg-light-danger border-0">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <a href="javascript:void(0)"
+                                        class="btn btn-danger rounded-circle btn-circle-lg text-white mb-2">
+                                        <i data-feather="video"></i>
+                                    </a>
+                                    <div class="ml-auto">
+                                        <span class="text-dark"><i
+                                                class="text-danger ti-arrow-up mr-1"></i>Videos</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="mb-0 font-weight-medium"><sup class="set-doller"></sup>{{count($resp->data->videos)}}</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">
+                                </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-8">
+                        <div class="card bg-light-warning border-0">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <a href="javascript:void(0)"
+                                        class="btn btn-warning rounded-circle btn-circle-lg text-white mb-2">
+                                        <i data-feather="film"></i>
+                                    </a>
+                                    <div class="ml-auto">
+                                        <span class="text-dark"><i
+                                                class="text-warning ti-arrow-up mr-1"></i>Stations</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h2 class="mb-0 font-weight-medium">{{count($state->data)}}</h2>
+                                    <h6 class="text-muted font-weight-normal mb-0"></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Recent Videos</h4>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        <thead>
+                                            <tr class="border-0">
+                                                <th class="border-0 font-weight-medium text-muted">Video</th>
+                                                <th class="border-0 font-weight-medium text-muted px-2">Title</th>
+                                                <th class="border-0 font-weight-medium text-muted">Station</th>
+                                                <th class="border-0 font-weight-medium text-muted text-center">Category
+                                                </th>
+                                                <th class="border-0 font-weight-medium text-muted text-center">
+                                                </th>
+                                                <th class="border-0 font-weight-medium text-muted">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($resp->data->recent_videos as $vid) 
+                                            <tr>
+                                                <td class="border-top-0 p-2">
+                                                    <div class="d-flex no-block align-items-center">
+                                                        <div class="mr-3"><img
+                                                                src="{{$vid->banner}}"
+                                                                alt="user" class="" width="150"
+                                                         height="100" /></div>
+                                                       
+                                                    </div>
+                                                </td>
+
+                                                <td class="border-top-0 text-muted p-2">{{$vid->title}}</td>
+                                                <td class="border-top-0">
+                                                    <div class="popover-icon">
+                                                    {{$vid->owner_id}}
+                                                    </div>
+                                                </td>
+                                                <td class="border-top-0 text-center">{{$vid->category_id}}</td>
+                                                <td class="border-top-0 text-center font-weight-medium text-muted">
+                                                </td>
+                                                <td class="font-weight-medium text-dark border-top-0">{{$vid->created_at}}</td>
+                                            </tr>
+                                          
+                                           
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Recent Users</h4>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        
+                                        <tbody>
+                                        <?php $x = 1;?>
+                                         @foreach($resp->data->recent_users as $user)
+                                        <tr>
+                                            <td class="border-top-0 p-2">
+                                                <div class="d-flex no-block align-items-center">
+                                                    <div class="mr-3">{{$x++}}
+                                                           </div>
+                                                    <div class="">
+                                                        <h5 class="mb-0 font-16 font-weight-medium">{{$user->name}}</h5>
+                                                        <span class="text-muted"><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771f101801120537101a161e1b5914181a">{{$user->email}}</a></span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="border-top-0 text-muted p-2">{{$user->created_at}}</td>
+                                        </tr>
+                                        @endforeach
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title mb-4">Stations</h4>
+                                <div class="table-responsive">
+                                    <table class="table no-wrap v-middle mb-0">
+                                        <thead>
+                                        <tr class="border-0">
+                                            <th class="border-0 font-weight-medium text-muted">Station Name</th>
+                                            <th class="border-0 font-weight-medium text-muted px-2">Description</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach($state->data as $station)
+                                        <tr>
+                                            <td class="border-top-0 p-2">
+                                                <div class="d-flex no-block align-items-center"><a href="/station/profile/{{$station->id}}">
+                                                {{$station->stationName}}
+                                                </div></a>
+                                           
+                                            </td>
+                                        
+                                            <td class="border-top-0 text-muted p-2"> {{$station->description}}</td>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer text-center text-muted">
+            &copy; Copyright 2020. Internet Multimedia
+            </footer>
+        </div>
+    </div>
 
-<!-- sidenav bottom -->
-<div class="no-shrink">
-<div class="p-3 d-flex align-items-center">
-</div>
-</div>
-</div>
-</div>
-<div class="flex"><!-- ############ Content START-->
-<div id="content" class="flex"><!-- ############ Main START-->
-<div>
-<div class="page-hero page-container" id="page-hero">
-<div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Dashboard</h2>
-<small>Welcome, <strong>{{Session::get('name')}}</strong></small>
-</div>
-<div class="flex"></div>
-</div>
-</div>
-<div class="page-content page-container" id="page-content">
-<div class="padding">
-<div class="row row-sm sr">
-
-<div class="col-md-4 d-flex">
-<div class="card flex">
-<div class="card-body">
-<div class="d-flex align-items-center text-hover-success">
-<div class="avatar w-56 m-2 no-shadow gd-primary"><i data-feather="film"></i></div>
-<div class="px-4 flex">
-<div>All Stations</div>
-<div class="text-primary mt-2">{{count($state->data)}}</div>
-</div>
-<a href="#" class="text-muted"><i data-feather="arrow-right"></i></a></div>
-</div>
-</div>
-</div>
-<div class="col-md-4 d-flex">
-<div class="card flex">
-<div class="card-body">
-<div class="d-flex align-items-center text-hover-success">
-<div class="avatar w-56 m-2 no-shadow gd-primary"><i
-data-feather="video"></i></div>
-<div class="px-4 flex">
-<div>Total Videos</div>
-<div class="text-primary mt-2">{{count($resp->data->videos)}}</div> 
-</div>
-<a href="#" class="text-muted"><i data-feather="arrow-right"></i></a></div>
-</div>
-</div>
-</div>
-<div class="col-md-4 d-flex">
-<div class="card flex">
-<div class="card-body">
-<div class="d-flex align-items-center text-hover-success">
-<div class="avatar w-56 m-2 no-shadow gd-primary"><i
-data-feather="users"></i></div>
-<div class="px-4 flex">
-<div>Total Users</div>
-<div class="text-primary mt-2">{{count($resp->data->users)}}</div>
-</div>
-<a href="#" class="text-muted"><i data-feather="arrow-right"></i></a></div>
-</div>
-</div>
-</div>
-
-
-<div class="col-md-12 d-flex">
-<div class="card flex">
-<div class="p-3-4 bg-dark bg-img" data-stellar-background-ratio="0.1"
-style="background-image: url(img/z4.jpg); border-radius: 5px 5px 0px 0px;" data-plugin="stellar">
-<div class="d-flex">
-<div>
-<div style="font-size: medium" style="color:#244ac4 !important;">Recent Added Videos</div>
-<!-- <small class="text-muted">Total: 30</small> -->
-</div>
-<span class="flex"></span>
-<!-- <div><a href="#" style="background-color: white; color: black" class="btn btn-sm btn-white">More</a></div> -->
-</div>
-</div>
-
-
-<div class="list list-row">
-@foreach($resp->data->recent_videos as $vid) 
-<div class="list-item" data-id="8">
-<div><a href="#">
-    <div class="media" style="width: 108px; height: 60px;"><a href="#" class="ajax media-content" style="background-image:url({{$vid->banner}})" data-pjax-state=""></a><div class="media-action media-action-overlay">
-    <button class="btn btn-icon no-bg no-shadow hide-row" data-toggle-class="">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-    class="feather feather-heart active-danger">
-    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5
-    0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></button>
-    <button class="btn btn-raised btn-icon btn-rounded bg--white btn-play"></button>
-    <button class="btn btn-icon no-bg no-shadow hide-row btn-more" data-toggle="dropdown">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
-    <circle cx="12" cy="12" r="1"></circle>
-    <circle cx="19" cy="12" r="1"></circle>
-  <circle cx="5" cy="12" r="1"></circle></svg></button>
-  <div class="dropdown-menu dropdown-menu-right"></div></div></div>
-</a></div>
-
-<div class="flex" ><a href="#" class="item-author text-color">{{$vid->title}}...</a></div>
-
-<div class=""><a href="https://play.google.com/store/apps/details?id=org.lwnm.digitallib&hl=en"  class="item-author text-color" style="text-align:center">{{$vid->owner_id}}  </a></div>
-<!-- category name -->
-<div><a href="#" class="item-author text-color">{{$vid->created_at}}</a></div>
-</div>
-@endforeach
-</div>
-</div>
-</div>
-
-
-<div class="col-md-7">
-<div class="card">
-<div class="p-3-4">
-<div class="d-flex">
-<div>
-<div>Recent Added Users</div>
-<small class="text-muted">Total: 230</small>
-</div>
-<span class="flex"></span>
- <!-- <div><a href="#" class="btn btn-sm btn-white">More</a></div> -->
-</div>
-</div>
-
-<table class="table table-theme v-middle m-0">
-<tbody>
-<?php $x = 1;?>
-@foreach($resp->data->recent_users as $user)
-<tr class="" data-id="4">
-<td style="min-width:30px;text-align:center">{{$x++}}</td>
-<td>
-<div class="avatar-group"><a href="#"
-class="avatar ajax w-32" data-toggle="tooltip" title="Consequat"></a></div>
-</td>
-
-<td class="flex"><a class="item-company ajax h-1x" style="color:#448bff;">{{$user->name}}</a>
-<div class="item-mail h-1x d-none d-sm-block">
-{{$user->email}}
-</div>
-</td>
-<td><span class="item-amount d-none d-sm-block text-sm">{{$user->created_at}}</span></td>
-</tr>
-@endforeach
-</tbody>
-</table>
-</div>
-</div>
-<div class="col-md-5 d-flex">
-<div class="card flex">
-<div class="p-3-4">
-<div class="d-flex">
-<div>
-<div>Stations</div>
-<small class="text-muted">Total: 1230</small>
-</div>
-<span class="flex"></span>
-
-</div>
-</div>
-
-<div class="list list-row">
-@foreach($state->data as $station)
-<div class="list-item" data-id="6">
-<!-- <div>
-<a class="media media-16x9 r" href="video.detail.php"><span
-class="media-content"
-style="background-image:url(assets/img/z1.jpg)"></span></a>
-</div> -->
-<div class="flex"><a href="/station/profile/{{$station->id}}" class="item-author text-color">
-{{$station->stationName}}</a>
-</div>
-<div>
-<div class="item-action dropdown"><a href="#" data-toggle="dropdown"class="text-muted"><i
- data-feather="more-vertical"></i></a>
-<div class="dropdown-menu dropdown-menu-right bg-light"
- role="menu"><a class="dropdown-item" href="#">See
-    detail </a><a
-        class="dropdown-item edit">Edit</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item trash">Delete item</a></div>
-</div>
-</div>
-</div>
-@endforeach
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- ############ Main END--></div><!-- ############ Content END--><!-- ############ Footer START-->
-<div id="footer" class="page-footer">
-<div class="d-flex p-3"><span class="text-sm flex">&copy; Copyright. Internet Multimedia</span>
-<div class="text-sm">Version 1.1.2</div>
-</div>
-</div><!-- ############ Footer END--></div>
-<script src="/assets/js/site.min.js"></script>
-</body>
-</html>
+    @include('includes/footer')

@@ -30,8 +30,10 @@ Route::get('/all/users', 'UserController@users')->name("users");
 Route::get('/logout', 'UserController@logout')->name("logout");
 
 Route::get('/videos', 'VideoController@videos')->name("videos");
+Route::get('/trash/video/{video_id}', 'VideoController@trashVideo')->name("trashVideo");
 Route::get('/create/video', 'VideoController@create_video')->name("create_video");
-Route::get('/edit/video', 'VideoController@edit_video')->name("edit_video");
+Route::get('/edit/video/{video_id}', 'VideoController@edit_video')->name("edit_video");
+Route::post('/update/{video_id}', 'VideoController@update')->name("update");
 Route::get('/video/details', 'VideoController@video_detail')->name("video_details");
 Route::get('/upload/video', 'VideoController@upload_video')->name("upload_video");
 Route::post('/uploadvideos', 'VideoController@uploadvideos')->name("uploadvideos");
@@ -42,6 +44,7 @@ Route::get('delete/video/{id}', 'VideoController@deleteVideo')->name("deleteVide
 Route::get('all/category', 'VideoController@category')->name("category");
 Route::get('/create/category','VideoController@createCategory')->name("createCategory");
 Route::post('/postCategory','VideoController@postCategory')->name("postCategory");
+Route::get('/edit/category/{id}','VideoController@editCat')->name("editCat");
 
 
 Route::get('/stations','StationController@stations')->name("stations");

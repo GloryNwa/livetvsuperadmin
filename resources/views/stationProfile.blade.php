@@ -1,240 +1,224 @@
-@include ('includes/header')
-
-
-<!-- sidenav bottom -->
-<div class="no-shrink">
-<div class="p-3 d-flex align-items-center">
-</div>
-</div>
-</div>
-</div>
-<div class="flex"><!-- ############ Content START-->
-<div id="content" class="flex"><!-- ############ Main START-->
-<div>
-<div class="page-hero page-container" id="page-hero">
-<div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Edit Station</h2>
-<small>Welcome, <strong>{{Session::get('name')}}</strong></small>
-</div>
-<div class="flex"></div>
-</div>
-</div>
-
-<div class="page-content page-container" id="page-content">
-<div class="padding">
-<div id="accordion"><p class="text-muted"><strong>Account</strong></p>
-<div class="card">
-<!-- <div class="d-flex align-items-center px-4 py-3 pointer" data-toggle="collapse"
-data-parent="#accordion" data-target="#c_1"> -->
-<!-- <div><span class="w-48 avatar circle bg-info-lt" data-toggle-class="loading"><img
-src="/assets/img/a9.jpg" alt="."></span></div>
-<div class="mx-3 d-none d-md-block"><strong>{{Session::get('name')}}</strong>
-<div class="text-sm text-muted">{{Session::get('email')}}</div>
-</div> -->
-<!-- <div class="flex"></div>
-<div class="mx-3"><i data-feather="chevron-right"></i></div>
-<div><a href="signin.1.html" class="text-prmary text-sm">Sign Out</a></div>
-</div> -->
-<div class="collapse p-4" id="c_1">
-<form role="form">
-<div class="form-group"><label>Profile picture</label>
-<div class="custom-file"><input type="file" class="custom-file-input"
-id="customFile"><label class="custom-file-label"
-for="customFile">Choose
-file</label></div>
-</div>
-<div class="form-group"><label>First Name</label><input type="text"
-class="form-control"></div>
-<div class="form-group"><label>Last Name</label><input type="text"
-class="form-control"></div>
-<button type="submit" class="btn btn-primary mt-2">Update</button>
-</form>
-</div>
-
-<div class="d-flex align-items-center">
-<!-- <div class="px-3"> -->
-<!-- <div>Sync</div>
-<div class="text-sm text-muted">On - Sync everything</div> -->
-<!-- </div> -->
-<!-- <div class="flex"></div> -->
-<!-- <span><label class="ui-switch ui-switch-md"><input type="checkbox"
-checked="checked">
- <i></i></label></span> -->
-</div>
-<div class="d-flex align-items-center px-4 py-3 b-t pointer" data-toggle="collapse"
-data-parent="#accordion" data-target="#c_2"><i data-feather="film"></i>
-<div class="px-3">
-<div>Station</div>
-</div>
-<div class="flex"></div>
-<div><i data-feather="chevron-right"></i></div>
-</div>
-<div class="collapse p-4" id="c_2">
-<form role="form" method="POST" action="/stationsprofile">
-<div class="form-group"><label>Station Name</label>
-<input type="text" name="name" class="form-control"  value="{{ $station->stationName}}" >
-</div>
-<div class="form-group"><label>Station Description</label>
-<input type="text" name="desc" class="form-control"  value="{{$station->description}}" >
-</div>
-<div class="form-group"><label>Url</label>
-<input type="text"class="form-control" name="url"  value="{{$station->url}}" >
-</div>
-<div class="form-group"><label>Email</label>
-<input type="email"class="form-control" name="email"  value="{{$station->email}}" >
-</div>
-<div class="form-group"><label>Paypal_id</label>
-<input type="text"class="form-control" name="paypal"  value="{{$station->paypal_id}}" >
-</div>
-<div class="form-group"><label>Phone Numbers</label>
-                                     
-                                            
-<input type="text"class="form-control" name="phone"  value="" >
-                                         
-</div>
-<div class="form-group"><label>Thumbnails</label>
-<input type="text"class="form-control" name="thumbnail"  value="{{$station->thumbnail}}" >
-</div>
-
-<div class="form-group"><label>Donate Url</label>
-<input type="text"class="form-control" name="donateurl"  value="{{$station->donateurl}}" >
-</div>
-<div class="form-group"><label>Web Url</label>
-<input type="text"class="form-control" name="weburl"  value="{{$station->weburl}}" >
-</div>
-<div class="form-group"><label>Schedule Url</label>
-<input type="text"class="form-control" name="scheduleurl"  value="{{$station->scheduleurl}}" >
-</div>
-<div class="form-group"><label>Kingspay Code</label>
-<input type="text"class="form-control" name="kingspay"  value="{{$station->kingspaycode}}" >
-</div>
-<div class="form-group"><label>Unique_id</label>
-<input type="text"class="form-control" name="unique_id"  value="{{$station->unique_id}}" >
-</div>
-<div class="form-group"><label>Chat Room</label>
-<input type="text"class="form-control" name="chatroom"  value="{{$station->chatRoom}}" >
-</div>
-<div class="form-group"><label>Numbers of Comments</label>
-<input type="text"class="form-control" name="chatroom"  value="{{$station->numOfComments}}" >
-</div>
-<div class="form-group"><label>Time</label>
-<input type="text"class="form-control" name="banner"  value="{{ $station->created_at}}" >
-</div>
-
-<button type="submit" name="submit" class="btn btn-primary mt-2">Update</button>
-</form>
-</div>
-<div class="d-flex align-items-center px-4 py-3 b-t pointer" data-toggle="collapse"
-data-parent="#accordion" data-target="#c_3"><i data-feather="credit-card"></i>
-<div class="px-3">
-<div>Payment methods</div>
-</div>
-<div class="flex"></div>
-<div><i data-feather="chevron-right"></i></div>
-</div>
-<div class="collapse p-4" id="c_3">
-<form role="form">
-<div class="form-group"><label>Paypal account</label><input type="input"
-class="form-control">
-</div>
-<button type="submit" class="btn btn-primary mt-2">Update</button>
-</form>
-</div>
-<!-- <div class="d-flex align-items-center px-4 py-3 b-t pointer" data-toggle="collapse"
-data-parent="#accordion" data-target="#c_4"><i data-feather="map-pin"></i>
-<div class="px-3">
-<div>Addresses and more</div>
-</div>
-<div class="flex"></div>
-<div><i data-feather="chevron-right"></i></div>
-</div>
-<div class="collapse p-4" id="c_4">
-<form role="form">
-<div class="form-group"><label>URL</label><input type="text" class="form-control">
-</div>
-<div class="form-group"><label>Company</label><input type="text"
-class="form-control"></div>
-<div class="form-group"><label>Location</label><input type="text"
-class="form-control"></div>
-<button type="submit" class="btn btn-primary mt-2">Update</button>
-</form>
-</div>
-</div>
-<p class="text-muted"><strong>Notifications</strong></p>
-<div class="card">
-<div class="d-flex align-items-center px-4 py-3">
-<div>Anyone seeing my profile page</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input
-type="checkbox"> <i></i></label></span></div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Anyone follow me</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input type="checkbox"
-checked="checked"> <i></i></label></span>
-</div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Anyone send me a message</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input type="checkbox"
-checked="checked"> <i></i></label></span>
-</div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Anyone invite me to group</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input
-type="checkbox"> <i></i></label></span></div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Update</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input type="checkbox"
-checked="checked"> <i></i></label></span>
-</div>
-</div>
-<p class="text-muted"><strong>Emails</strong></p>
-<div class="card">
-<div class="d-flex align-items-center px-4 py-3">
-<div>Anyone posts a comment on my post</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input
-type="checkbox"> <i></i></label></span></div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Anyone follow me</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input type="checkbox"
-checked="checked"> <i></i></label></span>
-</div>
-<div class="d-flex align-items-center px-4 py-3 b-t">
-<div>Anyone repost</div>
-<div class="flex"></div>
-<span><label class="ui-switch ui-switch-md"><input
-type="checkbox"> <i></i></label></span></div>
-</div> -->
-<!-- <p class="text-muted"><strong>Security</strong></p> -->
-<div class="card">
-<div class="d-flex align-items-center px-4 py-3 b-t pointer" data-toggle="collapse"
-data-parent="#accordion" data-target="#c_5">
-<div>Delete account?</div>
-<div class="flex"></div>
-<div><i data-feather="chevron-right"></i></div>     
-</div>
-<div class="collapse p-4" id="c_5">
-<div class="py-3"><p>Are you sure to delete your account?</p>
-<button type="button" class="btn btn-white">No</button>
-<button type="button" class="btn btn-danger">Yes</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><!-- ############ Main END--></div><!-- ############ Content END--><!-- ############ Footer START-->
-<div id="footer" class="page-footer hide">
-<div class="d-flex p-3"><span class="text-sm flex">&copy; Copyright. flatfull.com</span>
-<div class="text-sm ">Version 1.1.2</div>
-</div>
-</div><!-- ############ Footer END--></div>
-<script src="/assets/js/site.min.js"></script>
-</body>
-<!-- Mirrored from flatfull.com/themes/basik/html/page.setting.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 May 2020 09:26:18 GMT -->
-</html>
+@include('includes/header')
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Edit Station</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Create Featured</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card ">
+                            <div class="card-header bg-info"></div>
+                            <form action="{{url('/stationsprofile', $station->unique_id)}}" method="post" class="form-horizontal">
+                            @csrf
+                            <form  class="form-horizontal">
+                                <div class="form-body">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle"></h6>
+                                    </div>
+                                    <hr class="mt-0 mb-5">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">Station Name</label>
+                                                    <div class="col-md-9">
+                                                    
+                                                        <input type="text" class="form-control"   value="{{ $station->stationName}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                            <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">Station Description</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control"  value="{{$station->description}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">URL</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control" value="{{$station->url}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">Email</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" class="form-control"  value="{{$station->email}}"  >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Paypal_id</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="{{$station->paypal_id}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Phone Numbers</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Thumbnails</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="{{$station->thumbnail}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Donate Url</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="{{$station->donateurl}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Web Url</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="{{$station->weburl}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Schedule Url</label>
+                                                    <div class="col-md-11">
+                                                        <input type="text" class="form-control" value="{{$station->scheduleurl}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Kingspay Code</label>
+                                                    <div class="col-md-11">
+                                                    <input type="text"class="form-control" name="kingspay"  value="{{$station->kingspaycode}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Unique_id</label>
+                                                    <div class="col-md-11">
+                                                    <input type="text"class="form-control" name="unique_id"  value="{{$station->unique_id}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Chat Room</label>
+                                                    <div class="col-md-11">
+                                                    <input type="text"class="form-control" name="chatroom"  value="{{$station->chatRoom}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Numbers of Comments</label>
+                                                    <div class="col-md-11">
+                                                    <input type="text"class="form-control" name="chatroom"  value="{{$station->numOfComments}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-row">
+                                                    <label class=" text-right col-md-1">Time</label>
+                                                    <div class="col-md-11">
+                                                    <input type="text"class="form-control" name="banner"  value="{{ $station->created_at}}" >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-right">
+                                            <button type="submit" class="btn btn-info">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer text-center text-muted">
+            &copy; Copyright 2020. Internet Multimedia
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    @include('includes/footer')

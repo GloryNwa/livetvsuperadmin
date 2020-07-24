@@ -17,10 +17,19 @@ class UserController extends Controller
 
  public function users(){
     $user_token = Session::get('user');
+
+    if(isset($_GET['page'])){
+      if(!empty($_GET['page'])){
+          $page = $_GET['page'];
+      }else{
+          $page = 1;
+      }
+  }else{
+      $page = 1;
     $curl = curl_init();
   
   curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://apis.livetvmobile.org/api/view/users/",
+  CURLOPT_URL => "http://apis.livetvmobile.org/api/view/users?per_page=10&page=$page",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -36,11 +45,17 @@ class UserController extends Controller
   
   $response = curl_exec($curl);
   curl_close($curl);
-  $users = json_decode($response);
-  return view('users',compact('users'));
+
+  $data['users']  = json_decode($response);
+    $users = 40;
+    $per_page = 10;
+    $links = $users / $per_page;
+
+    $data['links'] = $links;
+  return view('users',$data);
   }
   
-      
+}
   
   
   

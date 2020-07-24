@@ -1,67 +1,93 @@
-@include ('includes/header')
-
-<!-- sidenav bottom -->
-<div class="no-shrink">
-<div class="p-3 d-flex align-items-center">
-</div>
-</div>
-</div>
-</div>
-<div class="flex"><!-- ############ Content START-->
-<div id="content" class="flex"><!-- ############ Main START-->
-<div>
-<div class="page-hero page-container" id="page-hero">
-<div class="padding d-flex">
-<div class="page-title"><h2 class="text-md text-highlight">Create Video Category</h2>
-</div>
-
-<div class="flex"></div>
-</div>
-</div>
-<div class="page-content page-container" id="page-content">
-<div class="padding">
-<div class="row">
-<div class="col-sm-12">
-@if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
+@include('includes/header')
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Create Category</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb m-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
+                                    <li class="breadcrumb-item text-muted active" aria-current="page">Create Category</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card ">
+                      
+                            <div class="card-header bg-info"></div>
+                            <form class="form-horizontal"  method="post" action="{{route('postCategory')}}">
+                            @csrf
+                                <div class="form-body">
+                                    <div class="card-body">
+                                        <h6 class="card-subtitle">Please fill information correctly.</h6>
+                                    </div>
+                                    <hr class="mt-0 mb-5">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">Category Name</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text"  name="name" class="form-control" placeholder="News">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-6">
+                                                <div class="form-group row">
+                                                    <label class="control-label text-right col-md-3">Video Unique Id</label>
+                                                    <div class="col-md-9">
+                                                    <input type="text" name="unique_id" class="form-control" placeholder="News">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-right">
+                                            <button type="submit" name="submit" class="btn btn-info">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer text-center text-muted">
+              &copy; Copyright 2020. Internet Multimedia
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
     </div>
- @endif
-<form data-plugin="parsley" method="post" action="{{route('postCategory')}}">
-@csrf
-<div class="card">
-<div class="card-header"></div>
-<div class="card-body">
-<div class="form-row">
-
-<div class="form-group col-sm-6">
-<label>Category Name</label><input type="text" name="name" class="form-control" required>
-</div>
-<div class="form-group col-sm-6">
-<label>Video Unique_id</label><input type="text" name="unique_id" class="form-control" required>
-</div>
-</div>
-<div class="text-left">
-<button type="submit" name="submit" class="btn btn-primary">Create</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><!-- ############ Main END-->
-
-<!-- ############ Content END--><!-- ############ Footer START-->
-<div id="footer" class="page-footer hide">
-<div class="d-flex p-3"><span class="text-sm flex">&copy; Copyright. Internet Multimedia</span>
-<div class="text-sm ">Version 1.1.2</div>
-</div>
-</div><!-- ############ Footer END--></div>
-<script src="/assets/js/site.min.js"></script>
-</body>
-</html>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- customizer Panel -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    @include('includes/footer')
