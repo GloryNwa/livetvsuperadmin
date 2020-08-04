@@ -60,7 +60,7 @@
                                         </thead>
                                         <tbody>
                                         <?php $x = 1;?>
-                                       <?php var_dump($total_videos );exit;?>
+                                       <!-- <?php var_dump($total_videos );exit;?> -->
                                          @foreach($total_videos as $vid)
                                            
                                             <tr>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-line">
-                        <textarea  name="category" class="form-control no-resize" rows="4" value="{" id="category"></textarea>
+                        <textarea  name="category" class="form-control no-resize" rows="4" value="{{$vid->category_name}}" id="category"></textarea>
                     </div>
                 </div>       
             </div>

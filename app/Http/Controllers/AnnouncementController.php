@@ -12,19 +12,18 @@ class AnnouncementController extends Controller
     public function manageBanners(){
         $token = Session::get('user');
         $curl = curl_init();
-
         curl_setopt_array($curl, array(
-        CURLOPT_URL => "http://apis.livetvmobile.org/api/super/banner/all",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "GET",
-        CURLOPT_HTTPHEADER => array(
-            "Authorization: $token",
-            "Accept: application/json"
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/banner/all",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "GET",
+          CURLOPT_HTTPHEADER => array(
+          "Authorization: $token",
+          "Accept: application/json"
         ),
         ));
 
@@ -33,6 +32,51 @@ class AnnouncementController extends Controller
         $banners = json_decode($response);
           return view('manageBanners',['banners' =>$banners]);
       }
+
+//////////////////////////////////////////////////////////////
+// public function manageBanners(){
+ 
+//   if(isset($_GET['page'])){
+//     if(!empty($_GET['page'])){
+//         $page = $_GET['page'];
+//     }else{
+//         $page = 1;
+//     }
+//   }else{
+//     $page = 1;
+
+//     $token = Session::get('user');
+//     $curl = curl_init();
+//     curl_setopt_array($curl, array(
+//       CURLOPT_URL => "http://apis.livetvmobile.org/api/banner/all?per_page=10&page=$page",
+//       CURLOPT_RETURNTRANSFER => true,
+//       CURLOPT_ENCODING => "",
+//       CURLOPT_MAXREDIRS => 10,
+//       CURLOPT_TIMEOUT => 0,
+//       CURLOPT_FOLLOWLOCATION => true,
+//       CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//       CURLOPT_CUSTOMREQUEST => "GET",
+//       CURLOPT_HTTPHEADER => array(
+//       "Authorization: $token",
+//       "Accept: application/json"
+//     ),
+//     ));
+
+//     $response = curl_exec($curl);
+//     curl_close($curl);
+//     $data['banners']  = json_decode($response);
+//      // dd($data['total_videos']);exit;
+//      $banners = 40;
+
+//      $per_page = 10;
+//      $links = $banners / $per_page;
+
+//      $data['links'] = $links;
+    
+//        return view("manageBanners",$data);
+//   }
+
+// }
            
  //////////////////////////////////////////////////////////////     
 
@@ -176,11 +220,7 @@ class AnnouncementController extends Controller
         return redirect('/announcement');
     }
 
-
-    
-
   
-       
   /////////////////////////////////////////////////////////////   
      
    public function delete($id){

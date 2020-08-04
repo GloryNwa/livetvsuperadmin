@@ -28,11 +28,17 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card ">
+                        @if(session()->has('message'))
+                         <div class="alert alert-success">
+                            {{ session()->get('message') }}
+                         </div>
+                        @endif
                             <div class="card-header bg-info"></div>
-                            <form action="#" class="form-horizontal">
+                            <form class="form-horizontal" method="post" action="{{route('postBanners')}}">
+                            @csrf
                                 <div class="form-body">
                                     <div class="card-body">
-                                        <h6 class="card-subtitle">Please fill information correctly.</h6>
+                                        <h6 class="card-subtitle"></h6>
                                     </div>
                                     <hr class="mt-0 mb-5">
                                     <div class="card-body">
@@ -41,7 +47,7 @@
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Title</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="John doe">
+                                                        <input type="text" name="title" class="form-control" placeholder="Holy Spirit & You">
                                                     </div>
                                                 </div>
                                             </div>
@@ -50,7 +56,7 @@
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Description</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="John doe">
+                                                        <input type="text" name="desc" class="form-control" placeholder="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -59,18 +65,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group row">
-                                                    <label class="control-label text-right col-md-3">Text</label>
+                                                    <label class="control-label text-right col-md-3">Link</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="John doe">
+                                                        <input type="text" name="link" class="form-control" placeholder="http://super-admin.test/create/banners.png">
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--/span-->
                                             <div class="col-md-6">
                                                 <div class="form-group row">
-                                                    <label class="control-label text-right col-md-3">Text</label>
+                                                    <label class="control-label text-right col-md-3">Banner</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="John doe">
+                                                        <input type="file" name="file" class="form-control" placeholder="John doe">
                                                     </div>
                                                 </div>
                                             </div>

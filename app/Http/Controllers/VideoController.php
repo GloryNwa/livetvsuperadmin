@@ -45,7 +45,7 @@ class VideoController extends Controller
           $response = curl_exec($curl);
            curl_close($curl);
            $data['total_videos']  = json_decode($response);
-            dd($data['total_videos']);exit;
+            // dd($data['total_videos']);exit;
             $total_videos = 40;
        
             $per_page = 10;

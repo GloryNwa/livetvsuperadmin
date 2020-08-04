@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
-    <title>Dashboard - Loveworld Live Tv</title>
+    <title>Super Admin - Loveworld Live Tv</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/severny-admin-template/" />
     <!-- Custom CSS -->
     <link href="/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -52,17 +52,17 @@
                             <b class="logo-icon">
                                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                                 <!-- Dark Logo icon -->
-                                <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                                <img src="/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo icon -->
-                                <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                                <img src="/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
                             </b>
                             <!--End Logo icon -->
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                                <img src="/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->
-                                <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                                <img src="/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
                             </span>
                         </a>
                         <a class="d-none d-md-block op-7 sidebartoggler" href="javascript:void(0)">

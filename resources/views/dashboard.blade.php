@@ -163,7 +163,7 @@
                                                            </div>
                                                     <div class="">
                                                         <h5 class="mb-0 font-16 font-weight-medium">{{$user->name}}</h5>
-                                                        <span class="text-muted"><a href="https://www.wrappixel.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="771f101801120537101a161e1b5914181a">{{$user->email}}</a></span>
+                                                        <span class="text-muted"><a href="#">{{$user->email}}</a></span>
                                                     </div>
                                                 </div>
                                             </td>

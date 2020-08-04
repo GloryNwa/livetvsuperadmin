@@ -70,7 +70,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                Copyright 2019. All Rights Reserved by Severny Admin
+                Copyright 2019. All Rights Reserved by Internet Multimedia
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

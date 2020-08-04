@@ -31,105 +31,32 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <div class="row el-element-overlay">
+                    
+                   
+                    
+                  
+                @foreach($banners->data as $bann)
                     <div class="col-lg-3 col-md-6">
+                    
+                                           
                         <div class="card">
+                        
                             <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
+                                <div class="el-card-avatar el-overlay-1"><img src="{{$bann->file}}" alt="user" />
                                     <div class="el-overlay">
                                         <ul class="list-style-none el-info">
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
+                                
                                 </div>
                             </div>
+                         
                         </div>
+                      
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
-                                    <div class="el-overlay">
-                                        <ul class="list-style-none el-info">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
-                                    <div class="el-overlay">
-                                        <ul class="list-style-none el-info">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
-                                    <div class="el-overlay">
-                                        <ul class="list-style-none el-info">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
-                                    <div class="el-overlay">
-                                        <ul class="list-style-none el-info">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card">
-                            <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"> <img src="../assets/images/big/img5.jpg"
-                                                                               alt="user" />
-                                    <div class="el-overlay">
-                                        <ul class="list-style-none el-info">
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="el-card-content">
-                                    <button class="btn btn-info">Edit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
+                    @endforeach
                 </div>
             </div>
             <!-- ============================================================== -->
@@ -139,7 +66,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                Copyright 2019. All Rights Reserved by Severny Admin
+                Copyright 2020. Internet Multimedia
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
