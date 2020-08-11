@@ -270,7 +270,7 @@ class VideoController extends Controller
       //  dd($response);
       curl_close($curl);
       $vids= json_decode($response);
-       return redirect('/videos')->with('message', 'Video updated successfully');   
+      return redirect()->back()->with('message', 'Video updated successfully'); 
       
    }
    ////////////////////////////////////////////////////////////////////

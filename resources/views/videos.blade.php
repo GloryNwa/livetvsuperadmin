@@ -60,8 +60,8 @@
                                         </thead>
                                         <tbody>
                                         <?php $x = 1;?>
-                                       <!-- <?php var_dump($total_videos );exit;?> -->
-                                         @foreach($total_videos as $vid)
+                                       <!--  -->
+                                         @foreach($total_videos->data as $vid)
                                            
                                             <tr>
                                                 <td>{{$x++}}</td>

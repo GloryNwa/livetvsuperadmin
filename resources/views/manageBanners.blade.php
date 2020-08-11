@@ -30,35 +30,31 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-                <div class="row el-element-overlay">
-                    
-                   
-                    
-                  
+                <div class="row el-element-overlay">      
                 @foreach($banners->data as $bann)
-                    <div class="col-lg-3 col-md-6">
-                    
-                                           
+                    <div class="col-lg-3 col-md-6">                             
                         <div class="card">
-                        
                             <div class="el-card-item">
-                                <div class="el-card-avatar el-overlay-1"><img src="{{$bann->file}}" alt="user" />
+                                <div class="el-card-avatar el-overlay-1"><img style="max-height: 150px" src="{{$bann->file}}" alt="user" />
                                     <div class="el-overlay">
                                         <ul class="list-style-none el-info">
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="el-card-content">
-                                
+                                  <button class="btn btn-success"
+                                      data-original-title="Edit"><a href='/edit/banner'style="color:#fff">Edit</a>
+                                  <button class="btn btn-danger"
+                                   data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')" href='/delete/banner' style="color:#fff">
+                                   Delete</a></button>
                                 </div>
+                            
                             </div>
-                         
                         </div>
-                      
                     </div>
                     @endforeach
                 </div>
-            </div>
+            </div><br><br>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
