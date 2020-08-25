@@ -428,8 +428,8 @@ class VideoController extends Controller
 
         public function postCategory(Request $request){
             $this->validate($request, [
-              'name'  => 'required',
-              'unique_id' => 'required'
+              'name'  => 'required'
+              // 'unique_id' => 'required'
                
                 ]);
       
