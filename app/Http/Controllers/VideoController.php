@@ -76,7 +76,7 @@ class VideoController extends Controller
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => array('video_id' => $id),
+          CURLOPT_POSTFIELDS =>  $id,
           CURLOPT_HTTPHEADER => array(
             "Authorization:$trash_token",
             "Accept: application/json",
@@ -87,7 +87,7 @@ class VideoController extends Controller
         $response = curl_exec($curl);
    
         curl_close($curl);
-        $total_videos = json_decode($response);
+        $delete = json_decode($response);
            
         // dd($total_videos);
          return redirect()->back()->with('message', 'Video deleted successfully');
@@ -359,7 +359,7 @@ class VideoController extends Controller
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "video_id=$id",
+        CURLOPT_POSTFIELDS => $id,
         CURLOPT_HTTPHEADER => array(
           "Authorization: $delete_token",
           "Accept: application/json",
@@ -382,18 +382,18 @@ class VideoController extends Controller
     
       public function category(){
         $cat_token = Session::get('user');
-        if(isset($_GET['page'])){
-          if(!empty($_GET['page'])){
-              $page = $_GET['page'];
-          }else{
-              $page = 1;
-          }
-      }else{
-          $page = 1;
+      //   if(isset($_GET['page'])){
+      //     if(!empty($_GET['page'])){
+      //         $page = $_GET['page'];
+      //     }else{
+      //         $page = 1;
+      //     }
+      // }else{
+      //     $page = 1;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories?per_page=5&page=$page",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -410,15 +410,15 @@ class VideoController extends Controller
             $response = curl_exec($curl);
             curl_close($curl);
             $data['category'] = json_decode($response);
-            $category = 10;
-            $per_page = 5;
-            $links = $category / $per_page;
+            // $category = 10;
+            // $per_page = 5;
+            // $links = $category / $per_page;
 
-            $data['links'] = $links;
+            // $data['links'] = $links;
             return view('category',$data);
         }
 
-      }
+      // }
 
 
         public function createCategory(){
@@ -429,7 +429,6 @@ class VideoController extends Controller
         public function postCategory(Request $request){
             $this->validate($request, [
               'name'  => 'required'
-              // 'unique_id' => 'required'
                
                 ]);
       
@@ -465,6 +464,38 @@ class VideoController extends Controller
         return view ('editCat');
     }
 
+
+   
+    public function activatevideo($video_id){
+      $video_id = 'video_id';
+      $activate_token = Session::get('user');
+      $curl = curl_init();
+
+      curl_setopt_array($curl, array(
+        CURLOPT_URL => "http://apis.livetvmobile.org/api/video/activate",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => $video_id,
+        CURLOPT_HTTPHEADER => array(
+          "Authorization: $activate_token ",
+          "Accept: application/json",
+          "Content-Type: application/x-www-form-urlencoded"
+        ),
+      ));
+
+      $response = curl_exec($curl);
+      dd( $response );
+      curl_close($curl);
+     
+      $vid= json_decode($response);
+     
+       return redirect()->back()->with('message', 'Video activated successfully');
+  }
 
         
 }

@@ -74,6 +74,16 @@
                                                 <td>{{$vid->created_at}}</td>
                                                 <td>
                                                  <div class="btn-group">
+                                                 @if(!$vid->status);
+                                                
+                                                <a  href="{{route('/activate/video', [$vid->video_id])}}">
+                                                <button class="btn btn-danger"
+                                                    data-toggle=""  data-original-title="activate">Activate</button>   
+                                                @else
+                                                 <button class="btn btn-danger"
+                                                    data-toggle=""  data-original-title="activate">Activated</button>
+                                                @endif
+
                                                 <a  href="/edit/video/{{$vid->video_id}}"> <button class="btn btn-success"
                                                   data-toggle="" data-target="" data-original-title="Edit">Edit</button></a>
                                                   
@@ -182,48 +192,5 @@
 </div>
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script>
-  $(document).ready(function(){
-    $('.editbtn').on('click', function(){
-      $('#exampleModal').modal('show');
-        $tr = $(this).closest('tr');
-
-        var data = $tr.children("td").map(function(){
-          return $(this).text();
-        }).get();
-
-        // console.log(data);
-
-        $('#id').val(data[0]);
-        $('#title').val(data[1]);
-        $('#category').val(data[2]);
-        $('#station').val(data[3]);
-        $('#file').val(data[4]);
-
-   });
    
-   $('#editData').on('submit', function(e){
-     e.preventDefault();
-
-     var id = $('#id').val();
-      
-      $.ajax({
-         type: "PUT",
-         url: "/updateData/"+id,
-         data: $('#editData').serialize(),
-         success: function(response){
-          console.log(response);
-          $('#exampleModal').modal('hide');
-         
-          location.reload();
-          alert("Data Updated");
-       },
-         error: function(error){
-           console.log(error);
-         }
-      });
-   });
-
-  });
-</script>
 @include('includes/footer')

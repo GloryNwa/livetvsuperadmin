@@ -37,7 +37,7 @@
                                     <hr class="mt-0 mb-5">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Category Name</label>
                                                     <div class="col-md-9">
@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                             <!--/span-->
-                                            <div class="col-md-6">
+                                            <!-- <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Video Unique Id</label>
                                                     <div class="col-md-9">
@@ -56,7 +56,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!--/span-->
                                         </div>
                                     </div>

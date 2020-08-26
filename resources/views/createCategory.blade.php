@@ -47,16 +47,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--/span-->
-                                            <!-- <div class="col-md-6">
+                                            <!-- <span>
+                                            <div class="col-md-6">
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Video Unique Id</label>
                                                     <div class="col-md-9">
                                                     <input type="text" name="unique_id" class="form-control" placeholder="News">
                                                     </div>
                                                 </div>
-                                            </div> -->
-                                            <!--/span-->
+                                            </div>
+                                            </span> -->
                                         </div>
                                     </div>
                                     <div class="card-body">

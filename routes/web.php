@@ -30,7 +30,7 @@ Route::get('/all/users', 'UserController@users')->name("users");
 Route::get('/logout', 'UserController@logout')->name("logout");
 
 Route::get('/videos', 'VideoController@videos')->name("videos");
-Route::get('/trash/video/{video_id}', 'VideoController@trashVideo')->name("trashVideo");
+Route::get('/trash/video/{id}', 'VideoController@trashVideo')->name("trashVideo");
 Route::get('/create/video', 'VideoController@create_video')->name("create_video");
 Route::get('/edit/video/{video_id}', 'VideoController@edit_video')->name("edit_video");
 Route::post('/update/{video_id}', 'VideoController@update')->name("update");
@@ -45,6 +45,7 @@ Route::get('all/category', 'VideoController@category')->name("category");
 Route::get('/create/category','VideoController@createCategory')->name("createCategory");
 Route::post('/postCategory','VideoController@postCategory')->name("postCategory");
 Route::get('/edit/category/{id}','VideoController@editCat')->name("editCat");
+Route::get('/activate/video/{video_id}','VideoController@activatevideo')->name("activatevideo");
 
 
 Route::get('/stations','StationController@stations')->name("stations");
