@@ -12,6 +12,7 @@ class VideoController extends Controller
 {
    
     public function videos(){
+   
         $video_token = Session::get('user');
 
         if(isset($_GET['page'])){
@@ -467,12 +468,19 @@ class VideoController extends Controller
 
    
     public function activatevideo($video_id){
-      $video_id = 'video_id';
+     
       $activate_token = Session::get('user');
       $curl = curl_init();
 
+      if($status == 1){
+        $link =  "http://apis.livetvmobile.org/api/super/video/activate";
+      }
+      else{
+        $link =  "http://apis.livetvmobile.org/api/super/video/deactivate";
+      }
+
       curl_setopt_array($curl, array(
-        CURLOPT_URL => "http://apis.livetvmobile.org/api/video/activate",
+        CURLOPT_URL =>$link,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => "",
         CURLOPT_MAXREDIRS => 10,
@@ -489,13 +497,51 @@ class VideoController extends Controller
       ));
 
       $response = curl_exec($curl);
-      dd( $response );
+ 
       curl_close($curl);
      
-      $vid= json_decode($response);
+      $vid = json_decode($response);
      
        return redirect()->back()->with('message', 'Video activated successfully');
   }
 
-        
-}
+
+
+
+    public function changeStatus($video_id){  
+    $deactivate_token = Session::get('user');
+    $status = 'status';
+    if($status == true){
+      $link =  "http://apis.livetvmobile.org/api/super/video/activate";
+    }
+    else{
+      $link =  "http://apis.livetvmobile.org/api/super/video/deactivate";
+  
+    $curl = curl_init();
+    
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $link,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => "",
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => "POST",
+      CURLOPT_POSTFIELDS  =>  $video_id,
+      CURLOPT_HTTPHEADER => array(
+        "Authorization: $deactivate_token ",
+        "Accept: application/json",
+        "Content-Type: application/x-www-form-urlencoded"
+    
+      ),
+    ));
+
+    $response = curl_exec($curl); 
+    curl_close($curl);
+    $vid= json_decode($response);
+     return response()->json(['success'=> 'Status updated successfully']);
+    }
+
+   }        
+  }

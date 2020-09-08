@@ -22,6 +22,8 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
 </head>
 <body>
     <!-- ============================================================== -->
@@ -110,8 +112,8 @@
 
                 </div>
                 <div class="profile-section">
-                    <p class="font-weight-light mb-0 font-18">Sandra Phillip</p>
-                    <span class="op-7 font-14">Marketing Head</span>
+                    <p class="font-weight-light mb-0 font-18">Nonso</p>
+                    <span class="op-7 font-14"> Super Admin</span>
                     <div class="row border-top border-bottom mt-3 no-gutters">
                         <div class="col-6 border-right">
                             <a class="p-3 d-block menubar-height dropdown-toggle" id="bottom-sidebar" href="javascript:void(0)" data-display="static" role="button" data-toggle="dropdown" aria-haspopup="true"

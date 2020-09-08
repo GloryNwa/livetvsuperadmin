@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="mb-0 font-weight-medium">{{count($resp->data->users)}}</h2>
+                                    <h2 class="mb-0 font-weight-medium"></h2>
                                     <h6 class="text-muted font-weight-normal mb-0"></h6>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="mb-0 font-weight-medium"><sup class="set-doller"></sup>{{count($resp->data->videos)}}</h2>
+                                    <h2 class="mb-0 font-weight-medium"><sup class="set-doller"></sup></h2>
                                     <h6 class="text-muted font-weight-normal mb-0 w-100 text-truncate">
                                 </h6>
                                 </div>
@@ -82,7 +82,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h2 class="mb-0 font-weight-medium">{{count($state->data)}}</h2>
+                                    <h2 class="mb-0 font-weight-medium"></h2>
                                     <h6 class="text-muted font-weight-normal mb-0"></h6>
                                 </div>
                             </div>

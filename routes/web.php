@@ -46,6 +46,7 @@ Route::get('/create/category','VideoController@createCategory')->name("createCat
 Route::post('/postCategory','VideoController@postCategory')->name("postCategory");
 Route::get('/edit/category/{id}','VideoController@editCat')->name("editCat");
 Route::get('/activate/video/{video_id}','VideoController@activatevideo')->name("activatevideo");
+Route::get('/change/status/{video_id}','VideoController@changeStatus')->name("changeStatus");
 
 
 Route::get('/stations','StationController@stations')->name("stations");
