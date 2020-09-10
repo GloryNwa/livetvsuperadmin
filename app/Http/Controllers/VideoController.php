@@ -15,18 +15,18 @@ class VideoController extends Controller
     public function videos(){
    
         $video_token = Session::get('user');
-      //   if(isset($_GET['page'])){
-      //     if(!empty($_GET['page'])){
-      //         $page = $_GET['page'];
-      //     }else{
-      //         $page = 1;
-      //     }
-      // }else{
-      //     $page = 1;
+        if(isset($_GET['page'])){
+          if(!empty($_GET['page'])){
+              $page = $_GET['page'];
+          }else{
+              $page = 1;
+          }
+      }else{
+          $page = 1;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=10",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=4",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -45,18 +45,18 @@ class VideoController extends Controller
            curl_close($curl);
            $data['total_videos']  = json_decode($response);
             // dd($data['total_videos']);exit;
-            // $total_videos = 40;
+            $total_videos = 40;
    
-            // $per_page = 10;
-            // $links = $total_videos / $per_page;
+            $per_page = 10;
+            $links = $total_videos / $per_page;
 
-            // $data['links'] = $links;
+            $data['links'] = $links;
            
             return view("videos",$data);
               
      
     
-    // }
+    }
 
     }
   

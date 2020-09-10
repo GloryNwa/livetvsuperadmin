@@ -92,7 +92,9 @@
 <nav aria-label="Page navigation example">
 <ul class="pagination">
 <!-- <li class="page-item"><a class="page-link" href="/videos?page='.$prev.'"></a></li> -->
-<!--  -->
+@for($i = 1; $i <= $links; $i++)
+    <li class="-item"><a class="page-link" href="/videos?per_page={{$i}}">{{$i}}</a></li>
+@endfor
 <!-- <li class="page-item"><a class="page-link" href="/videos?page='.$next.'"></a></li> -->
 </ul>
 </nav>
