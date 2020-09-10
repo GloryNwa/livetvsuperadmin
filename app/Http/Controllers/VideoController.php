@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\CheckUser;
+use App\Libraries\Messenger;
 use Auth;
 use Session;
 
@@ -14,20 +15,18 @@ class VideoController extends Controller
     public function videos(){
    
         $video_token = Session::get('user');
-
-        if(isset($_GET['page'])){
-          if(!empty($_GET['page'])){
-              $page = $_GET['page'];
-          }else{
-              $page = 1;
-          }
-      }else{
-          $page = 1;
-
+      //   if(isset($_GET['page'])){
+      //     if(!empty($_GET['page'])){
+      //         $page = $_GET['page'];
+      //     }else{
+      //         $page = 1;
+      //     }
+      // }else{
+      //     $page = 1;
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=$page",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=10",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -42,29 +41,28 @@ class VideoController extends Controller
           ),
         ));
         
-        
           $response = curl_exec($curl);
            curl_close($curl);
            $data['total_videos']  = json_decode($response);
             // dd($data['total_videos']);exit;
-            $total_videos = 40;
-       
-            $per_page = 10;
-            $links = $total_videos / $per_page;
+            // $total_videos = 40;
+   
+            // $per_page = 10;
+            // $links = $total_videos / $per_page;
 
-            $data['links'] = $links;
+            // $data['links'] = $links;
            
-              return view("videos",$data);
+            return view("videos",$data);
               
      
-      }
-
+    
+    // }
 
     }
   
       ///////////////////////////////////////////////////////////////
 
-      public function trashVideo($id){
+      public function trashVideo($video_id){
     
         $trash_token = Session::get('user');
         $curl = curl_init();
@@ -77,7 +75,7 @@ class VideoController extends Controller
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS =>  $id,
+          CURLOPT_POSTFIELDS => array('video_id' => $video_id),
           CURLOPT_HTTPHEADER => array(
             "Authorization:$trash_token",
             "Accept: application/json",
@@ -90,7 +88,7 @@ class VideoController extends Controller
         curl_close($curl);
         $delete = json_decode($response);
            
-        // dd($total_videos);
+        
          return redirect()->back()->with('message', 'Video deleted successfully');
         }
   
@@ -201,7 +199,7 @@ class VideoController extends Controller
       
     
   /////////////////////////////////////////////////////////////////////    
-      public function edit_video($id){
+      public function edit_video($video_id){
             //  $id = 'video_id';
             $editing_token = Session::get('user');
             $curl = curl_init();
@@ -214,7 +212,7 @@ class VideoController extends Controller
               CURLOPT_FOLLOWLOCATION => true,
               CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
               CURLOPT_CUSTOMREQUEST => "POST",
-              CURLOPT_POSTFIELDS => array('video_id' => $id),
+              CURLOPT_POSTFIELDS => array('video_id' => $video_id),
               CURLOPT_HTTPHEADER => array(
                   "Authorization:$editing_token",
                   "Accept: application/json",
@@ -222,58 +220,105 @@ class VideoController extends Controller
                 ),
               ));
               
-               
-                $response = curl_exec($curl);
-                //  dd($response);
-                curl_close($curl);
-                $vids= json_decode($response);
-             
-                $vid = $vids->data;
-              //  dd($data );
-            return view('edit_video',['vid'=>$vid]);
-      }
 
 
-
-
-      public function update(Request $request, $video_id){
-          $this->validate($request, [
-            'title'  =>'required',
-            'video_id'=>'',
-            'category'=>'required',
-            'banner'=>'required',
-            'file'=>'required',
-            'owner_id' =>'required'
+              $response = curl_exec($curl);
+              //  dd($response);
+              curl_close($curl);
+              $vid= json_decode($response);
            
-            ]);
-            $update_token = Session::get('user');
-            $curl = curl_init();
+              // $vid = $vids->data;
+              
+              //////////////////////////////////////////////////// 
+              $edit_token = Session::get('user');
+              $curl = curl_init();
+  
+              curl_setopt_array($curl, array(
+                CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                  "Authorization: $edit_token",
+                  "Accept: application/json",
+                  "Content-Type: application/x-www-form-urlencoded"
+                ),
+              ));
+           
+              $response = curl_exec($curl);
+              curl_close($curl);
+              $res = json_decode($response);
 
-            curl_setopt_array($curl, array(
-              CURLOPT_URL => "http://apis.livetvmobile.org/api/video/update",
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => "",
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => "POST",
-              CURLOPT_POSTFIELDS => array('title' => 'required','category' => 'required','banner'=> new CURLFILE('required'),'video_id' => ''),
-              CURLOPT_HTTPHEADER => array(
-               "Authorization:$update_token ",
-                "Accept: application/json",
-                "Content-Type: application/x-www-form-urlencoded"
+              /////////////////////////////////////////////////////////
+
+              $stat_token = Session::get('user');
+              $curl = curl_init();
       
-        ),
-      ));
+              curl_setopt_array($curl, array(
+                CURLOPT_URL => "http://apis.livetvmobile.org/api/view/stations",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                  "Authorization: $stat_token",
+                  "Accept: application/json"
+                ),
+              ));
+              
+              $response = curl_exec($curl);
+                curl_close($curl);
+                $stations = json_decode($response);
+
+            return view('edit_video',['vid'=>$vid, 'res'=>$res, 'stations'=>$stations]);
+      }
+      
+
+
+
+      public function update(Request $request, Messenger $messenger){
+
        
-      $response = curl_exec($curl);
-      //  dd($response);
-      curl_close($curl);
-      $vids= json_decode($response);
-      return redirect()->back()->with('message', 'Video updated successfully'); 
+        $this->validate($request, [
+          'title'  => 'required',
+          'file'  => 'required',
+          'category' => 'required',
+          'station'  => 'required',
+          'video_id' => 'required',
+          'banner' => 'required'
+           ]);
+
+                $dataArr = array(
+                  'station_id'=>$request->station,
+                  'title'=>$request->title,
+                  'category_id'=>$request->category,
+                  'banner'=>$request->banner,
+                  'file'=>$request->file,
+                  'video_id'=>$request->video_id);
       
-   }
+              $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/super/video/update');
+      
+      
+        if($response->status){
+          return redirect('/videos')->with('message', 'Video Updated successfully ')->with("type","success");
+      
+              }else {
+    
+                
+              return redirect('/edit/video/'.$request->video_id)->with('message', 'There was an error while trying to update your video ')->with("type","danger");
+      
+              }
+
+             
+            }
+    
    ////////////////////////////////////////////////////////////////////
 
 
@@ -445,7 +490,7 @@ class VideoController extends Controller
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => array('name' => 'Amen'),
+          CURLOPT_POSTFIELDS =>'name',
           CURLOPT_HTTPHEADER => array(
             "Authorization: $category_token ",
             "Accept: application/json",
@@ -459,7 +504,8 @@ class VideoController extends Controller
           return redirect()->back()->with('message', 'Category created successfully');
 
 
-          }
+   }
+
 
       public function editCat($id){
         return view ('editCat');

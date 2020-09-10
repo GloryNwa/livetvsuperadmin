@@ -17,12 +17,7 @@
 
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
+          
             <div class="container-fluid">
                 <!-- *************************************************************** -->
                 <!-- Start First Cards -->
@@ -93,7 +88,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-4">Recent Videos</h4>
+                                <h4 class="card-title mb-4">Latest Videos</h4>
                                 <div class="table-responsive">
                                     <table class="table no-wrap v-middle mb-0">
                                         <thead>

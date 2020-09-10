@@ -40,11 +40,7 @@
 <div class="card-body">
 <h4 class="card-title">Videos</h4>
 <div class="table-responsive">
-@if(session()->has('message'))
-<div class="alert alert-success">
-{{ session()->get('message') }}
-</div>
-@endif
+@include("alert")
 <table id="demo-foo-pagination" class="table table-bordered toggle-arrow-tiny no-wrap"
     data-sorting="true" data-paging="true" data-paging-size="5">
     <div id="message"></div>
@@ -84,9 +80,9 @@
             <a  href="/edit/video/{{$vid->video_id}}"> <button class="btn btn-success"
                 data-toggle="" data-target="" data-original-title="Edit">Edit</button></a>
                 
-                <button class="btn btn-danger"
+                <!-- <button class="btn btn-danger"
                 data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')"href="/trash/video/{{$vid->video_id}}" style="color:#fff">
-                    Delete</a></button>
+                    Delete</a></button> -->
                 </div>
             </td> 
         </tr>
@@ -96,9 +92,7 @@
 <nav aria-label="Page navigation example">
 <ul class="pagination">
 <!-- <li class="page-item"><a class="page-link" href="/videos?page='.$prev.'"></a></li> -->
-@for($i = 1; $i <= $links; $i++)
-    <li class="-item"><a class="page-link" href="/videos?per_page={{$i}}">{{$i}}</a></li>
-@endfor
+<!--  -->
 <!-- <li class="page-item"><a class="page-link" href="/videos?page='.$next.'"></a></li> -->
 </ul>
 </nav>

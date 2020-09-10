@@ -28,48 +28,60 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card ">
-                            <div class="card-header bg-info"></div>
-                            <form action="{{route('update', [$vid->video_id] )}}" method="post" class="form-horizontal">
-                            @csrf
+                        @include("alert")
+                     <div class="card-header bg-info"></div>
+                        <form action="{{route('update')}}" method="post" class="form-horizontal">
+                        @csrf
                 <div class="modal-body">
                 <!-- <input type="hidden" name="video_id" id="id"/> -->
                 <div class="form-group">
+
+                
                 <label for="time">Title</label>
                     <div class="form-line">
-                        <input type="text" name="title" class="form-control" value="{{$vid->title}}" id="title">
+                        <input type="text" name="title" class="form-control" value="{{$vid->data->title}}" id="title">
                     </div>
                 </div>
                 <div class="form-group">
-                <label for="time">Video_id</label>
+             
+                  <!-- <label for="time">Video_id</label> -->
                     <div class="form-line">
-                        <input type="text" name="video_id" class="form-control" value="{{$vid->video_id}}" id="title">
+                     <input type="hidden" name="video_id" class="form-control" value="{{$vid->data->video_id}}" id="video_id">
                     </div>
                 </div>
                 <div class="form-group">
                 <label for="time">Banner</label>
                     <div class="form-line">
-                        <input type="file" name="banner" class="form-control" value="{{$vid->banner}}" id="title">
+                        <input type="text" name="banner" class="form-control" value="{{$vid->data->banner}}" id="">
                     </div>
                 </div>
 
                 <div class="form-group">
-                <label for="time">Category</label>
-                    <div class="form-line">
-                        <textarea  name="category" class="form-control no-resize" rows="4" value="{{$vid->category}}" id="category">{{$vid->category}}</textarea>
-                    </div>
-                </div>       
+                <label for="time">Select Category</label>
+                <select name="category" class="form-control" required="">
+                    <option value="{{$vid->data->category_id}}">{{$vid->data->category}}</option>
+                    @foreach($res->data as $video) 
+                    <option value="{{$video->unique_id}}">{{$video->name}}</option>
+                    @endforeach
+                </select>
+            </div>       
             </div>
             <div class="form-group">
-                <label for="time">Station</label>
+                <label for="time">Select Station</label>
                     <div class="form-line">
-                        <input type="text" name="station" class="form-control" value="{{$vid->owner_id}}" id="station">
+                    <select name="station" class="form-control" required="">
+                    <option value="{{$vid->data->owner_id}}">{{$vid->data->owner_name}}</option>
+                    @foreach($stations->data as $stat) 
+                    <option value="{{$stat->id}}">{{$stat->stationName}}</option>
+                    @endforeach
+                </select>
                     </div>
                 </div>
         <div class="form-group">
-        <label for="time">Video</label>
-        <div class="form-line">
-            <input type="file" name="file" id="file"  class="form-control" required value="{{$vid->file}}">
-        </div>
+           <label for="time">Video</label>
+          <div class="form-line">
+            <input type="text" name="file" id="file"  class="form-control" required value="{{$vid->data->file}}">
+         </div>
         </div>
             <div class="card-body">
                 <div class="text-right">
