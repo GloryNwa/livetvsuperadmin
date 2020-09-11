@@ -50,7 +50,7 @@ public function postSliders(Request $request, Messenger $messenger){
   
           }
 
-         
+          
         }
 
 
