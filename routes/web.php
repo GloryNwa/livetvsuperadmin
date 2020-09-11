@@ -28,7 +28,7 @@ Route::get('/dashboard','SuperAdminController@dashboard')->name("dashboard");
 
 Route::get('/all/users', 'UserController@users')->name("users");
 Route::get('/logout', 'UserController@logout')->name("logout");
-
+///////////////////////////VIDEOS/////////////////////////////////////////////////////////
 Route::get('/videos', 'VideoController@videos')->name("videos");
 Route::get('/trash/video/{video_id}', 'VideoController@trashVideo')->name("trashVideo");
 Route::get('/create/video', 'VideoController@create_video')->name("create_video");
@@ -50,7 +50,7 @@ Route::get('/edit/category/{id}','VideoController@editCat')->name("editCat");
 Route::get('/activate/video/{video_id}','VideoController@activatevideo')->name("activatevideo");
 Route::get('/change/status/{video_id}','VideoController@changeStatus')->name("changeStatus");
 
-
+/////////////////////////////////STATIONS///////////////////////////////////////////////////////
 Route::get('/stations','StationController@stations')->name("stations");
 Route::get('/station/details', 'StationController@station_details')->name("station_details");
 Route::get('/station/profile/{id}','StationController@stationProfile')->name("stationProfile");
@@ -62,6 +62,19 @@ Route::get('/manage/banners', 'AnnouncementController@manageBanners')->name("man
 Route::get('/create/banners', 'AnnouncementController@createBanners')->name("createBanners");
 Route::post('/postBanners', 'AnnouncementController@postBanners')->name("postBanners");
 
+/////////////////////////////SLIDER///////////////////////////////////////////////////////////////
+Route::get('/create/sliders', 'SliderController@sliders')->name("sliders");
+Route::get('/manage/sliders',    'SliderController@manageSliders')->name("manageSliders");
+Route::post('/postSlider',    'SliderController@postSlider')->name("postSlider");
+Route::post('/postSliderFile','SliderController@postSliderFile')->name("postSliderFile");
+
+
+//////////////////////////////SECTION//////////////////////////////////////////////////////////////
+Route::get('/create/section','SectionController@section')->name("section");
+Route::post('/postSection','SectionController@postSection')->name("postSection");
+
+
+//////////////////////////////ANNOUNCEMENT//////////////////////////////////////////////////////////
 Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");
 Route::post('/postAnnouncement','AnnouncementController@postAnnouncement')->name("postAnnouncement");
 Route::get('announcement','AnnouncementController@announcement')->name("announcement");

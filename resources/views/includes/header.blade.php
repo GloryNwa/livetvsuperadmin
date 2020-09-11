@@ -190,6 +190,19 @@
                                 class="hide-menu">Create Banner
                                 </span></a>
                         </li>
+
+
+                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("manageSliders")}}'
+                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                                    class="hide-menu">Manage Sliders
+                                </span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("sliders")}}'
+                                aria-expanded="false"><i data-feather="settings" class="feather-icon"></i><span
+                                class="hide-menu">Create Sliders
+                                </span></a>
+                        </li>
+
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href='{{route ("announcement")}}'
                                 aria-expanded="false"><i data-feather="loader" class="feather-icon"></i><span
                                     class="hide-menu">Announcement</span></a>
@@ -214,6 +227,15 @@
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('logout')}}"
                          aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
                          class="hide-menu">Logout</span></a></li>
+
+
+
+                         <ul aria-expanded="false" class="collapse first-level base-level-line in">
+                                <li class="sidebar-item"><a href="ticket-list.html" class="sidebar-link"><span class="hide-menu"> Ticket List
+                                        </span></a></li>
+                                <li class="sidebar-item"><a href="ticket-detail.html" class="sidebar-link"><span class="hide-menu"> Ticket Details
+                                        </span></a></li>
+                            </ul>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
