@@ -29,10 +29,12 @@
                     <div class="col-lg-12">
                         <div class="card ">
                             <div class="card-header bg-info"></div>
-                            <form action="#" class="form-horizontal">
+                            @include("alert")
+                            <form action="#" class="form-horizontal" method="post"  action="{{route('editCategory')}}">
+                             @csrf
                                 <div class="form-body">
                                     <div class="card-body">
-                                        <h6 class="card-subtitle">Please fill information correctly.</h6>
+                                        <h6 class="card-subtitle">Please carefully edit information correctly.</h6>
                                     </div>
                                     <hr class="mt-0 mb-5">
                                     <div class="card-body">
@@ -41,28 +43,16 @@
                                                 <div class="form-group row">
                                                     <label class="control-label text-right col-md-3">Category Name</label>
                                                     <div class="col-md-9">
-                                                        <input type="text" class="form-control" placeholder="John doe">
+                                                        <input type="text" name="category" class="form-control" placeholder="" value="">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--/span-->
-                                            <!-- <div class="col-md-6">
-                                                <div class="form-group row">
-                                                    <label class="control-label text-right col-md-3">Video Unique Id</label>
-                                                    <div class="col-md-9">
-                                                        <select class="form-control custom-select">
-                                                            <option value="">Male</option>
-                                                            <option value="">Female</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!--/span-->
+                    
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div class="text-right">
-                                            <button type="submit" class="btn btn-info">Submit</button>
+                                            <button type="submit" name="submit" class="btn btn-info">Submit</button>
                                         </div>
                                     </div>
                                 </div>

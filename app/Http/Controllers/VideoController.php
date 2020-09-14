@@ -26,7 +26,7 @@ class VideoController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=4",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/all?per_page=10&page=$page",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -109,7 +109,7 @@ class VideoController extends Controller
         $curl = curl_init();
   
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories?page=1&per_page=15",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -154,11 +154,11 @@ class VideoController extends Controller
             $stations = json_decode($response);
   
         return view('upload_video',['res'=>$res, 'stations' =>$stations]);
-          
+      
       }
 
       //////////////////////////Upload Method////////////////////////////////////////
-      public function uploadvideos(Request $request){
+      public function uploadvideos(Request $request, Messenger $messenger){
         $this->validate($request, [
           'title'  => 'required',
           'category_id' => 'required',
@@ -167,35 +167,32 @@ class VideoController extends Controller
           'bannerlink' => 'required'
            ]);
 
-          $upload_token = Session::get('user');
-            $curl = curl_init();
-
-                curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://apis.livetvmobile.org/api/super/video/upload",
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => "",
-                CURLOPT_MAXREDIRS => 10,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => "POST",
-                CURLOPT_POSTFIELDS => array('station_id' =>$request->station_id,'title' =>$request->title,'category_id' =>$request->category_id,'banner' =>$request->$banner),
-                 CURLOPT_HTTPHEADER => array(
-                    "Authorization: $upload_token",
-                    "Accept: application/json",
-                    "Content-Type: application/x-www-form-urlencoded"
-                ),
-             ));
-
-                $response = curl_exec($curl);
-                curl_close($curl);
-                $uploads= json_decode($response);
+          // $upload_token = Session::get('user');
+         
+                $dataArr = array(
+                  'title'=>$request->title,
+                  'category_id'=>$request->category_id,
+                  'station_id'=>$request->station_id,
+                  'videolink'=>$request->videolink,
+                  'bannerlink'=>$request->bannerlink);
+    
+               $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/super/video/upload');
+      
+      
+        if($response->status){
+          return redirect('/upload/video')->with('message', 'Slider Uploaded successfully ')->with("type","success");
+      
+              }else {
+    
                 
-                return redirect()->back()->with('message', 'Video uploaded successfully');
-          
-       
-      }
-
+              return redirect('/upload/video')->with('message', 'There was an error while trying to upload banner slider ')->with("type","danger");
+      
+              }
+    
+              
+            }
+    
+    
       
     
   /////////////////////////////////////////////////////////////////////    
@@ -234,7 +231,7 @@ class VideoController extends Controller
               $curl = curl_init();
   
               curl_setopt_array($curl, array(
-                CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
+                CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories?per_page=15&page=1",
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => "",
                 CURLOPT_MAXREDIRS => 10,
@@ -472,44 +469,97 @@ class VideoController extends Controller
          }
    
 
-        public function postCategory(Request $request){
-            $this->validate($request, [
-              'name'  => 'required'
-               
-                ]);
+        public function postCategory(Request $request, Messenger $messenger){
+
+       
+          $this->validate($request, [
+            'name'  => 'required'
+          
+             ]);
+  
+                  $dataArr = array(
+                    'name'=>$request->name,
+                    );
+        
+                $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/create/category');
+        
+        
+          if($response->status){
+            return redirect('/category')->with('message', 'Category created successfully ')->with("type","success");
+        
+                }else {
       
-      $category_token = Session::get('user');
-      $curl = curl_init();
+                  
+                return redirect('/create/category/'.$request->video_id)->with('message', 'There was an error while trying to create category ')->with("type","danger");
+        
+                }
+  
+               
+      }
+
+
+      public function editCat($unique_id){
+
+        $cat_token = Session::get('user');
+        $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/create/category",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 0,
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS =>'name',
+          CURLOPT_CUSTOMREQUEST => "GET",
           CURLOPT_HTTPHEADER => array(
-            "Authorization: $category_token ",
+            "Authorization: $cat_token",
             "Accept: application/json",
             "Content-Type: application/x-www-form-urlencoded"
           ),
         ));
-          $response = curl_exec($curl);
-          curl_close($curl);
-          $create= json_decode($response);
-
-          return redirect()->back()->with('message', 'Category created successfully');
-
-
-   }
-
-
-      public function editCat($id){
-        return view ('editCat');
+     
+        $response = curl_exec($curl);
+        curl_close($curl);
+        $cat = json_decode($response);
+        return view ('editCat',['cat'=>$cat]);
     }
+
+
+    
+    public function editCategory(Request $request, Messenger $messenger){
+
+       
+      $this->validate($request, [
+        'category'  => 'required',
+       
+         ]);
+
+              $dataArr = array(
+                'category'=>$request->cateory);
+    
+            $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/update/category');
+    
+    
+      if($response->status){
+        return redirect('/cateory')->with('message', 'Category Updated successfully ')->with("type","success");
+    
+            }else {
+  
+              
+            return redirect('/edit/category/'.$request->video_id)->with('message', 'There was an error while trying to update category ')->with("type","danger");
+    
+            }
+
+           
+          }
+
+
+
+
+
+
+
 
 
    

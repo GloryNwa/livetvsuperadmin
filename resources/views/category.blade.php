@@ -42,6 +42,7 @@
                                 <div class="table-responsive">
                                     <table id="demo-foo-pagination" class="table table-bordered toggle-arrow-tiny no-wrap"
                                         data-sorting="true" data-paging="true" data-paging-size="5">
+                                        @include("alert")
                                         <thead>
                                         
                                             <tr>

@@ -27,7 +27,7 @@
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="/" class="text-muted">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
                                     <li class="breadcrumb-item text-muted active" aria-current="page">Slider</li>
                                 </ol>
                             </nav>
@@ -54,7 +54,7 @@
 
             <div class="container-fluid">
                 <div class="row">
-                @foreach($sliders->data as $bann)
+                @foreach($section->data as $bann)
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
@@ -63,16 +63,10 @@
                                         <br />
                                         <br />
                                         <div class="white-box text-center">
-                                        @if($bann->contentType =='image')    
-                                        <img
-                                                src="{{$bann->file}}" class="img-fluid" alt="we are here">
-                                        @endif
-
-                                        @if($bann->contentType =='video')    
+                                           
                                         <video controls width='400'>
                                             <source src="{{$bann->file}}" />
                                         </video>
-                                        @endif
                                             </div>
                                         <!-- <button class="btn btn-dark btn-rounded mr-1" data-toggle="tooltip" title=""
                                                 data-original-title="Add to cart"><i class="ti-shopping-cart"></i> </button>

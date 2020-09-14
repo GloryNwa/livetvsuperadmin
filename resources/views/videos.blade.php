@@ -64,7 +64,11 @@
         <tr>
             <td>{{$x++}}</td>
             <td>
-                <img src="{{$vid->banner}} " alt="" width="150px">
+
+            <video controls preload="auto" poster="{{$vid->banner}}"  width='150'>
+                <source src="{{$vid->file}}" type="video/mp4" />
+           </video>
+                <!-- <img src="{{$vid->banner}} " alt="" width="150px"> -->
             </td>
             <td>{{$vid->title }}</td>
             <td>{{$vid->category_name}}</td>

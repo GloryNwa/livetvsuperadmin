@@ -45,7 +45,8 @@ Route::get('delete/video/{id}', 'VideoController@deleteVideo')->name("deleteVide
 Route::get('all/category', 'VideoController@category')->name("category");
 Route::get('/create/category','VideoController@createCategory')->name("createCategory");
 Route::post('/postCategory','VideoController@postCategory')->name("postCategory");
-Route::get('/edit/category/{id}','VideoController@editCat')->name("editCat");
+Route::get('/edit/category/{unique_id}','VideoController@editCat')->name("editCat");
+Route::post('/edit/category','VideoController@editCategory')->name("editCategory");
 
 Route::get('/activate/video/{video_id}','VideoController@activatevideo')->name("activatevideo");
 Route::get('/change/status/{video_id}','VideoController@changeStatus')->name("changeStatus");
@@ -72,7 +73,7 @@ Route::post('/postSliderFile','SliderController@postSliderFile')->name("postSlid
 //////////////////////////////SECTION//////////////////////////////////////////////////////////////
 Route::get('/create/section','SectionController@section')->name("section");
 Route::post('/postSection','SectionController@postSection')->name("postSection");
-
+Route::post('/manage/section','SectionController@manageSection')->name("manageSection");
 
 //////////////////////////////ANNOUNCEMENT//////////////////////////////////////////////////////////
 Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");
@@ -81,7 +82,17 @@ Route::get('announcement','AnnouncementController@announcement')->name("announce
 Route::get('/edit/announcement','AnnouncementController@editAnnouncement')->name("editAnnouncement");
 Route::get('/edit/announcement','AnnouncementController@edit')->name("edit");
 Route::get('delete/announcement/{id}', 'VideoController@delete')->name("delete");
+
+//Search 
+Route::post('/search','SearchController@returnSearch')->name("returnSearch");
+
 });
+
+
+
+
+
+
 
 
 

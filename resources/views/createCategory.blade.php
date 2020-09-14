@@ -24,6 +24,7 @@
                         <div class="card ">
                       
                             <div class="card-header bg-info"></div>
+                            @include("alert")
                             <form class="form-horizontal"  method="post" action="{{route('postCategory')}}">
                             @csrf
                                 <div class="form-body">

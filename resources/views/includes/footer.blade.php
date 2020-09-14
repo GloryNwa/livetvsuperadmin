@@ -34,5 +34,7 @@
     <script src="/assets/libs/chart.js/dist/Chart.min.js"></script>
     <script src="/assets/libs/gaugeJS/dist/gauge.min.js"></script>
     <script src="/dist/js/pages/dashboards/dashboard1.js"></script>
+
+
 </body>
 </html>

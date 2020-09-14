@@ -14,6 +14,7 @@
     <!-- Custom CSS -->
     <link href="/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/site.min.css">
     <!-- Custom CSS -->
     <link href="/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -90,7 +91,7 @@
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     </ul>
-                    <ul class="navbar-nav align-items-center">
+                    <!-- <ul class="navbar-nav align-items-center">
                        	<li class="nav-item d-none d-lg-block">
                             <div class="nav-link search-bar">
                                 <form class="my-2 my-lg-0">
@@ -102,7 +103,7 @@
                                 </form>
                             </div>
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
         </header>
@@ -149,7 +150,7 @@
                                     class="hide-menu">Dashboards
                                 </span></a>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('videos')}}"
+                        <li class="sidebar-item nav-header hidden-folded"> <a class="sidebar-link sidebar-link" href="{{route('videos')}}"
                                 aria-expanded="false"><i data-feather="video" class="feather-icon"></i><span
                                     class="hide-menu">Videos</span></a></li>
 
@@ -212,30 +213,53 @@
                                 aria-expanded="false"><i data-feather="loader" class="feather-icon"></i><span
                                     class="hide-menu">Create Announcement</span></a></li>
 
-                       <li class="sidebar-item"> <a class="sidebar-link" href='{{route("featuredVideo")}}'
-                                aria-expanded="false"><i data-feather="video" class="feather-icon"></i><span
-                                class="hide-menu">Featured Videos
-                                </span></a>
-                        </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("createFeaturedVideo")}}'
-                                aria-expanded="false"><i data-feather="loader" class="feather-icon"></i><span
-                                    class="hide-menu">Create Featured Videos
-                                </span></a>
-                        </li>
+
+
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Announcement</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href='{{route ("announcement")}}'>View Announcement</a>
+                            <a class="dropdown-item" href='("createAnnouncement")}}'>Create Announcement</a>
+                           
+                       </li>      
+
+
+
+                      
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Featured Video </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href='{{route("createFeaturedVideo")}}'>Create Featured Video</a>
+                            <a class="dropdown-item" href='{{route("featuredVideo")}}'>Manage Section</a>
+                           
+                       </li> 
+
+
+                        
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Section </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href='{{route("section")}}'>Create Section</a>
+                            <a class="dropdown-item" href='{{route("manageSection")}}'>Manage Section</a>
+                           
+                       </li>
+
+
+                        
+
                       
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('logout')}}"
-                         aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span
-                         class="hide-menu">Logout</span></a></li>
+                         aria-expanded="false"><i data-feather="log-out" class="feather-icon"  style="color:red"></i><span
+                         class="hide-menu"  style="color:red">Logout</span></a></li>
 
-
-
-                         <ul aria-expanded="false" class="collapse first-level base-level-line in">
-                                <li class="sidebar-item"><a href="ticket-list.html" class="sidebar-link"><span class="hide-menu"> Ticket List
-                                        </span></a></li>
-                                <li class="sidebar-item"><a href="ticket-detail.html" class="sidebar-link"><span class="hide-menu"> Ticket Details
-                                        </span></a></li>
-                            </ul>
+                        
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
