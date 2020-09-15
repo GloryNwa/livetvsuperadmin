@@ -116,26 +116,8 @@
                     <p class="font-weight-light mb-0 font-18">Sis Dammy</p>
                     <span class="op-7 font-14"> Super Admin</span>
                     <div class="row border-top border-bottom mt-3 no-gutters">
-                        <div class="col-6 border-right">
-                            <a class="p-3 d-block menubar-height dropdown-toggle" id="bottom-sidebar" href="javascript:void(0)" data-display="static" role="button" data-toggle="dropdown" aria-haspopup="true"
-                               aria-expanded="false">
-                                <span><i data-feather="settings" class="svg-icon op-7"></i></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dd5">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Action Here</a>
-                            </div>
-                        </div>
-                        <div class="col-6 border-right">
-                            <a class="p-3 d-block menubar-height dropdown-toggle" id="bottom-sidebar" href="javascript:void(0)" data-display="static" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <span><i data-feather="settings" class="svg-icon op-7"></i></span>
-                            </a>
-							<div class="dropdown-menu" aria-labelledby="dd5">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Action Here</a>
-                            </div>
-                        </div>
+                       
+                      
                     </div>
                 </div>
             </div>
