@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Libraries\Messenger;
-
+use Session;
 class SectionController extends Controller
 {
   public function section(){
@@ -69,8 +69,10 @@ class SectionController extends Controller
     ));
   $response = curl_exec($curl);
   curl_close($curl);
-  $section = json_decode($response);
-    return view('manageSection',['section' =>$section]);
+  $sections= json_decode($response);
+  // $section = $sections->data['0'];
+  // dd($sections);
+    return view('manageSection',['sections' =>$sections]);
 }
 
 

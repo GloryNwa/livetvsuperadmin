@@ -73,7 +73,7 @@ Route::post('/postSliderFile','SliderController@postSliderFile')->name("postSlid
 //////////////////////////////SECTION//////////////////////////////////////////////////////////////
 Route::get('/create/section','SectionController@section')->name("section");
 Route::post('/postSection','SectionController@postSection')->name("postSection");
-Route::post('/manage/section','SectionController@manageSection')->name("manageSection");
+Route::get('/manage/section','SectionController@manageSection')->name("manageSection");
 
 //////////////////////////////ANNOUNCEMENT//////////////////////////////////////////////////////////
 Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");
