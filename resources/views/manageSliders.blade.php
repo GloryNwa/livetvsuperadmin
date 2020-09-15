@@ -1,21 +1,5 @@
 @include('includes/header')
 
-
-
-
-
-
-
-
-
-
-
-
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -34,22 +18,6 @@
                         </div>
                     </div>
             </div>
-
-
-
-
-
-            <div class="container-fluid">
-                <div class="row el-element-overlay">
-                    
-                <div class="row">
-                    <div class="col-7 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Video Details</h4>
-                        
-                    </div>
-                </div>
-            </div>
-
 
 
             <div class="container-fluid">

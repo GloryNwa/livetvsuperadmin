@@ -56,6 +56,37 @@ class UserController extends Controller
   }
   
 }
+
+
+
+
+
+/////////////////////////DELETE Users////////////////////////////////////////
+
+public function deleteUser(Request $request, Messenger $messenger,$user_id){
+
+
+  $dataArr = array(
+    'user_id'=>$user_id
+ 
+  
+ );
+
+$response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/user/delete');
+
+if($response->status){
+return redirect('/all/users/')->with('message', 'User deleted successfully ')->with("type","success");
+
+}else {
+
+  
+return redirect('/all/users/'.$request->user_id)->with('message', 'There was an error while trying to delete user ')->with("type","danger");
+
+}
+
+
+}
+
   
   
   

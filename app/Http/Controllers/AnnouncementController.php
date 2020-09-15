@@ -223,11 +223,29 @@ class AnnouncementController extends Controller
   
   /////////////////////////////////////////////////////////////   
      
-   public function delete($id){
+  public function deleteAnnouncement(Request $request, Messenger $messenger,$id){
+
+
+    $dataArr = array(
+      'announcement_id'=>$id
    
-     
-      return redirect()->back()->with('message', 'Video deleted successfully');
-     }
+    
+   );
+
+  $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/super/announcement/remove');
+
+if($response->status){
+return redirect('/announcement')->with('message', 'Announcement deleted successfully ')->with("type","success");
+
+  }else {
+
+    
+  return redirect('/announcement'.$request->announcement_id)->with('message', 'There was an error while trying to delete announcement ')->with("type","danger");
+
+  }
+
+ 
+}
 
     
  

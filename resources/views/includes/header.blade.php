@@ -113,7 +113,7 @@
 
                 </div>
                 <div class="profile-section">
-                    <p class="font-weight-light mb-0 font-18">Nonso</p>
+                    <p class="font-weight-light mb-0 font-18">Sis Dammy</p>
                     <span class="op-7 font-14"> Super Admin</span>
                     <div class="row border-top border-bottom mt-3 no-gutters">
                         <div class="col-6 border-right">
@@ -146,8 +146,8 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap"></li>
                         <li class="sidebar-item"> <a class="sidebar-link" href="{{route('dashboard')}}"
-                                aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span
-                                    class="hide-menu">Dashboards
+                                aria-expanded="false"><i data-feather="home" class="feather-icon" style="color:#3f50f6"></i><span
+                                    class="hide-menu"style="color:#3f50f6">Dashboards
                                 </span></a>
                         </li>
 
@@ -180,15 +180,15 @@
 
                        
                         <li class="sidebar-item"> <a class="sidebar-link" href='{{route("users")}}'
-                                aria-expanded="false"><i data-feather="users" class="feather-icon"></i><span
-                                    class="hide-menu">Users </span></a>
+                                aria-expanded="false"><i data-feather="users" class="feather-icon" style="color:#3f50f6"></i><span
+                                    class="hide-menu"style="color:#3f50f6">Users </span></a>
                         </li>
 
 
 
                         <li class="sidebar-item"> <a class="sidebar-link" href='{{route("stations")}}'
-                                aria-expanded="false"><i data-feather="film" class="feather-icon"></i><span
-                                class="hide-menu">View Stations
+                                aria-expanded="false"><i data-feather="film" class="feather-icon" style="color:#3f50f6"></i><span
+                                class="hide-menu" style="color:#3f50f6">View Stations
                                 </span></a>
                         </li>
 

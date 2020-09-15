@@ -27,6 +27,8 @@ Route::get('/dashboard','SuperAdminController@dashboard')->name("dashboard");
 
 
 Route::get('/all/users', 'UserController@users')->name("users");
+Route::post('/delete/user/{user_id}', 'UserController@deleteUser')->name("deleteUser");
+
 Route::get('/logout', 'UserController@logout')->name("logout");
 ///////////////////////////VIDEOS/////////////////////////////////////////////////////////
 Route::get('/videos', 'VideoController@videos')->name("videos");
@@ -85,7 +87,7 @@ Route::post('/postAnnouncement','AnnouncementController@postAnnouncement')->name
 Route::get('announcement','AnnouncementController@announcement')->name("announcement");
 Route::get('/edit/announcement','AnnouncementController@editAnnouncement')->name("editAnnouncement");
 Route::get('/edit/announcement','AnnouncementController@edit')->name("edit");
-Route::get('delete/announcement/{id}', 'VideoController@delete')->name("delete");
+Route::get('delete/announcement/{id}', 'VideoController@deleteAnnouncement')->name("deleteAnnouncement");
 
 //Search 
 Route::post('/search','SearchController@returnSearch')->name("returnSearch");

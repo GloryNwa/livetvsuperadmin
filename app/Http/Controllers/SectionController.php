@@ -7,6 +7,10 @@ use App\Libraries\Messenger;
 use Session;
 class SectionController extends Controller
 {
+
+
+
+
   public function section(){
       return view('section');
   }
@@ -90,12 +94,12 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
         $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/super/section/delete');
 
   if($response->status){
-    return redirect('/manage/section/')->with('message', 'Section created successfully ')->with("type","success");
+    return redirect('/manage/section/')->with('message', 'Section deleted successfully ')->with("type","success");
 
         }else {
 
           
-        return redirect('/manage/section/'.$request->section_id)->with('message', 'There was an error while trying to create section ')->with("type","danger");
+        return redirect('/manage/section/'.$request->section_id)->with('message', 'There was an error while trying to delete section ')->with("type","danger");
 
         }
 
@@ -108,6 +112,7 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
 
       public function editSection($id){
 //  dd($id);
+       $id  = 'section_id';
         $token = Session::get('user');
         $curl = curl_init();
 
@@ -120,7 +125,7 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
           CURLOPT_FOLLOWLOCATION => true,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => array('section_id' => $id),
+          CURLOPT_POSTFIELDS =>  $id,
           CURLOPT_HTTPHEADER => array(
             "Authorization: $token",
             "Accept: application/json",
@@ -129,7 +134,7 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
         ));
 
         $response = curl_exec($curl);
-        // dd($response);
+        dd($response);
         curl_close($curl);
         $edit= json_decode($response);
       

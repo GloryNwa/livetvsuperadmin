@@ -72,19 +72,20 @@
                                     </thead>
                                     <tbody>
                                     <?php $x = 1;?>
-                                    @foreach($announce->data as $vid)
+                                    @foreach($announce->data as $news)
                                     <tr> 
                                     <td>{{$x++}}</td>  
-                                    <td><div class="">{{$vid->title}}...</a></div></td> 
-                                        <td>"{{$vid->description}} </td> 
-                                        <td>"{{$vid->button_text}} </td> 
-                                        <td>{{$vid->created_at}}</td> 
+                                    <td><div class="">{{$news->title}}...</a></div></td> 
+                                        <td>{{$news->description}} </td> 
+                                        <td>{{$news->button_text}} </td> 
+                                        <td>{{$news->created_at}}</td> 
                                         <td>
                                             <div class="btn-group">
                                             <button class="btn btn-success editbtn"
                                             data-toggle="modal" data-target="#examplemodal" data-original-title="Edit">Edit</button>
+
                                             <button class="btn btn-danger"
-                                            data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')" href='#' style="color:#fff">
+                                            data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')" href='/delete/announcement' style="color:#fff">
                                                 Delete</a></button>
                                                     </div>
                                                 </td> 

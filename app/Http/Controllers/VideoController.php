@@ -62,38 +62,31 @@ class VideoController extends Controller
   
       ///////////////////////////////////////////////////////////////
 
-      public function trashVideo($video_id){
-    
-        $trash_token = Session::get('user');
-        $curl = curl_init();
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/video/delete",
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => "",
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => array('video_id' => $video_id),
-          CURLOPT_HTTPHEADER => array(
-            "Authorization:$trash_token",
-            "Accept: application/json",
-            "Content-Type: application/x-www-form-urlencoded"
-          ),
-        ));
-  
-        $response = curl_exec($curl);
-   
-        curl_close($curl);
-        $delete = json_decode($response);
-           
+      public function trashVideo(Request $request, Messenger $messenger,$video_id){
+
+
+        $dataArr = array(
+          'video_id'=>$video_id
+       
         
-         return redirect()->back()->with('message', 'Video deleted successfully');
-        }
-  
-  
+       );
+
+      $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/video/delete');
+
+if($response->status){
+  return redirect('/videos')->with('message', 'Video deleted successfully ')->with("type","success");
+
+      }else {
+
         
+      return redirect('/videos'.$request->video_id)->with('message', 'There was an error while trying to delete video ')->with("type","danger");
+
+      }
+
+     
+    }
+
+
   
     ////////////////////////////////////////////////////////////////  
       public function create_video(){
@@ -465,8 +458,9 @@ class VideoController extends Controller
 
 
         public function createCategory(){
+
           return view ('createCategory');
-         }
+     }
    
 
         public function postCategory(Request $request, Messenger $messenger){
@@ -478,7 +472,7 @@ class VideoController extends Controller
              ]);
   
                   $dataArr = array(
-                    'name'=>$request->name,
+                    'name'=>$request->name
                     );
         
                 $response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/create/category');

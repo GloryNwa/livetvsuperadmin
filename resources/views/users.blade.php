@@ -34,6 +34,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Users</h4>
                                 <div class="table-responsive">
+                                @include("alert")
                                     <table id="demo-foo-pagination" class="table table-bordered toggle-arrow-tiny no-wrap"
                                         data-sorting="true" data-paging="true" data-paging-size="5">
                                         <thead>
@@ -59,7 +60,7 @@
                                                  <!-- <button class="btn btn-success"
                                                   data-toggle="modal" data-target="#example" data-original-title="Edit">Edit</a> -->
                                                   <button class="btn btn-danger"
-                                            data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')" href='#' style="color:#fff">
+                                            data-toggle="tooltip"  data-original-title="Remove"><a onclick="return confirm('Are you really sure?')" href='/delete/user' style="color:#fff">
                                                 Delete</a></button>
                                                     </div>
                                                 </td>   
