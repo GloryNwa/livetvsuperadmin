@@ -9,96 +9,86 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
-                <div class="row">
-                    <div class="col-12 align-self-center">
-                        <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Create Section</h4>
-                        <div class="d-flex align-items-center">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb m-0 p-0">
-                                    <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
-                                    <li class="breadcrumb-item text-muted active" aria-current="page">Create Slider</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-12 align-self-center">
+            <h4 class="page-title text-truncate text-dark font-weight-medium mb-1">Create Section</h4>
+            <div class="d-flex align-items-center">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb m-0 p-0">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-muted">Home</a></li>
+                        <li class="breadcrumb-item text-muted active" aria-current="page">Create Slider</li>
+                    </ol>
+                </nav>
             </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card ">
-                         @include("alert")
-                            <div class="card-header bg-info"></div>
-                            <div class="form-horizontal" method="post" action="{{route('postSection')}}" enctype="multipart/form-data">
-                         
-                                <div class="form-body">
-                                    <div class="card-body">
-                                        <h6 class="card-subtitle"></h6>
-                                    </div>
-                                    <hr class="mt-0 mb-5">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card ">
+                @include("alert")
+                <div class="card-header bg-info"></div>
+                <div class="form-horizontal" method="post" action="{{route('postSection')}}" enctype="multipart/form-data">
+                
+                    <div class="form-body">
+                        <div class="card-body">
+                            <h6 class="card-subtitle"></h6>
+                        </div>
+                        <hr class="mt-0 mb-5">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                
+                                <form action="{{route('postSection')}}" method="post">
+                                @csrf
+                                    <div class="form-group row">
+                                        <label class="control-label text-right col-md-3">Title</label>
+                                        <div class="col-md-9">
+                                            <input type="text" name="title" class="form-control" placeholder="" required>
                                             
-                                            <form action="{{route('postSection')}}" method="post">
-                                            @csrf
-                                                <div class="form-group row">
-                                                    <label class="control-label text-right col-md-3">Title</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" name="title" class="form-control" placeholder="" required>
-                                                      
-                                                
+                                    
 
-                                                  </div>
-                                                </div>
-                                                <div id="staging_area">
-
-                                             </div>
-
-                                            <div class="card-body">
-                                                <div class="text-right">
-                                                    <button type="submit" name="submit" class="btn btn-info">Upload</button>
-                                                </div>
-                                            </div>
-
-                                            </form>
-
-
-
-
-
-
-
-                                            </div>
-                                            <!--/span-->
-                                            <div class="col-md-6">
-                                                <div class="form-group row">
-                                                    <label class="control-label text-right col-md-3">Search for Video</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" id="search" name="search" class="form-control" placeholder="">
-                                                    </div>
-                                                </div>
-                                                    <div id="search_result">
-                                                       
-
-                                                    </div>
-                                            </div>
-                                            <!--/span-->
                                         </div>
-                                       
                                     </div>
-                                   
+                                    <div id="staging_area">
+
+                                    </div>
+
+                                <div class="card-body">
+                                    <div class="text-right">
+                                        <button type="submit" name="submit" class="btn btn-info">Upload</button>
+                                    </div>
                                 </div>
+
+                                </form>
+                                </div>
+                                <!--/span-->
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="control-label text-right col-md-3">Search for Video</label>
+                                        <div class="col-md-9">
+                                            <input type="text" id="search" name="search" class="form-control" placeholder="">
+                                        </div>
+                                    </div>
+                                        <div id="search_result">
+                                            
+
+                                        </div>
+                                </div>
+                                <!--/span-->
                             </div>
+                            
                         </div>
+                        
                     </div>
                 </div>
             </div>
-
-
-
-            <footer class="footer text-center text-muted">
+        </div>
+    </div>
+</div>
+ <footer class="footer text-center text-muted">
                &copy; Copyright 2020. Internet Multimedia
             </footer>
             <!-- ============================================================== -->
@@ -179,29 +169,27 @@
                     for(var i = 0; i < data.data.length; i++){
                         obj+= `
                         <div class="card">
-                                                        <div class="card-body">
-                                                            <div class="row"> 
-                                                
-                                                                <div class="col-md-6">
-                                                                            <img src=" ${data.data[i].banner}" width="200">
-                                                               </div>
+                    <div class="card-body">
+                        <div class="row"> 
+            
+                            <div class="col-md-6">
+                                        <img src=" ${data.data[i].banner}" width="200">
+                            </div>
 
-                                                                <div class="col-md-6">
-                                                                    <h5>Title: ${data.data[i].title}</h5><br />
-                                                                    <h5>Category: ${data.data[i].category_name}</h5><br />
+                            <div class="col-md-6">
+                                <h5>Title: ${data.data[i].title}</h5><br />
+                                <h5>Category: ${data.data[i].category_name}</h5><br />
 
-                                                                    <button title="${data.data[i].title}" id="${data.data[i].video_id}" category=" ${data.data[i].category_name}" banner="${data.data[i].banner}" class="addToStaging" class="btn btn-warning">Add to Preview</button>
-                                                                    
-                          
-                                                             </div>
-                                                            </div>
-                                                        </div>
+                                <button title="${data.data[i].title}" id="${data.data[i].video_id}" category=" ${data.data[i].category_name}" banner="${data.data[i].banner}" class="addToStaging" class="btn btn-warning">Add to Preview</button>
+                                
 
-                                                    </div>`
-                    }
+                            </div>
+                        </div>
+                    </div>
 
-
-                    $("#search_result").html(obj)
+                </div>`
+             }
+                $("#search_result").html(obj)
                 }else{
                     $("#search_result").html(" ")
                 }
@@ -232,26 +220,26 @@
 
         $("#staging_area").append(`
         <div class="card" id="${video_id}">
-                                                        <div class="card-body">
-                                                            <div class="row"> 
-                                                
-                                                                <div class="col-md-6">
-                                                                            <img src=" ${banner}" width="200">
-                                                               </div>
+            <div class="card-body">
+                <div class="row"> 
+    
+                    <div class="col-md-6">
+                                <img src=" ${banner}" width="200">
+                    </div>
 
-                                                                <div class="col-md-6">
-                                                                <input type = "hidden" value="${video_id}" name="videos[]"
-                                                                    <h5>Title: ${title}</h5><br />
-                                                                    <h5>Category: ${category}</h5><br />
+                    <div class="col-md-6">
+                    <input type = "hidden" value="${video_id}" name="videos[]"
+                        <h5>Title: ${title}</h5><br />
+                        <h5>Category: ${category}</h5><br />
 
-                                                                    <button id="${video_id}" class="removeFromStaging btn btn-danger">Remove from Preview</button>
-                                                                    
-                          
-                                                             </div>
-                                                            </div>
-                                                        </div>
+                        <button id="${video_id}" class="removeFromStaging btn btn-danger">Remove from Preview</button>
+                        
 
-                                                    </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         `)
        
     })

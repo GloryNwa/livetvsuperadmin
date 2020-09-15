@@ -91,7 +91,7 @@
                 <div class="navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     </ul>
-                    <!-- <ul class="navbar-nav align-items-center">
+                    <ul class="navbar-nav align-items-center">
                        	<li class="nav-item d-none d-lg-block">
                             <div class="nav-link search-bar">
                                 <form class="my-2 my-lg-0">
@@ -103,7 +103,7 @@
                                 </form>
                             </div>
                         </li>
-                    </ul> -->
+                    </ul>
                 </div>
             </nav>
         </header>
@@ -150,18 +150,41 @@
                                     class="hide-menu">Dashboards
                                 </span></a>
                         </li>
-                        <li class="sidebar-item nav-header hidden-folded"> <a class="sidebar-link sidebar-link" href="{{route('videos')}}"
-                                aria-expanded="false"><i data-feather="video" class="feather-icon"></i><span
-                                    class="hide-menu">Videos</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="{{route('upload_video')}}"
-                                aria-expanded="false"><i data-feather="upload" class="feather-icon"></i><span
-                                    class="hide-menu">Upload Videos</span></a></li>
+
+                    
+
+
+
+                     <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Videos</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{route('videos')}}">Videos</a>
+                            <a class="dropdown-item" href="{{route('upload_video')}}">Upload Videos</a>
+                           
+                       </li> 
+
+
+
+
+
+
+
+
+
+
+
+
+
                        
                         <li class="sidebar-item"> <a class="sidebar-link" href='{{route("users")}}'
                                 aria-expanded="false"><i data-feather="users" class="feather-icon"></i><span
                                     class="hide-menu">Users </span></a>
                         </li>
+
+
 
                         <li class="sidebar-item"> <a class="sidebar-link" href='{{route("stations")}}'
                                 aria-expanded="false"><i data-feather="film" class="feather-icon"></i><span
@@ -170,61 +193,55 @@
                         </li>
 
                         
-                        <li class="sidebar-item"> <a class="sidebar-link" href="{{route('category')}}"
-                                aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
-                                    class="hide-menu">Category
-                                </span></a>
-                        </li>
-                    <li class="sidebar-item"> <a class="sidebar-link" href="{{route('createCategory')}}"
-                                aria-expanded="false"><i data-feather="codepen" class="feather-icon"></i><span
-                                    class="hide-menu">Create Category
-                                </span></a></li>
+                        
 
-
-                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("manageBanners")}}'
-                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                                    class="hide-menu">Manage Banner
-                                </span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("createBanners")}}'
-                                aria-expanded="false"><i data-feather="settings" class="feather-icon"></i><span
-                                class="hide-menu">Create Banner
-                                </span></a>
-                        </li>
-
-
-                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("manageSliders")}}'
-                                aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                                    class="hide-menu">Manage Sliders
-                                </span></a>
-                        </li>
-                        <li class="sidebar-item"> <a class="sidebar-link" href='{{route("sliders")}}'
-                                aria-expanded="false"><i data-feather="settings" class="feather-icon"></i><span
-                                class="hide-menu">Create Sliders
-                                </span></a>
-                        </li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href='{{route ("announcement")}}'
-                                aria-expanded="false"><i data-feather="loader" class="feather-icon"></i><span
-                                    class="hide-menu">Announcement</span></a>
-                        </li>
-
-                        <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href='{{route("createAnnouncement")}}'
-                                aria-expanded="false"><i data-feather="loader" class="feather-icon"></i><span
-                                    class="hide-menu">Create Announcement</span></a></li>
-
-
-
-
-                         <li class="nav-item dropdown">
+                               
+                      <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Announcement</span>
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Category</span>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href='{{route ("announcement")}}'>View Announcement</a>
-                            <a class="dropdown-item" href='("createAnnouncement")}}'>Create Announcement</a>
+                            <a class="dropdown-item" href="{{route('category')}}">Category</a>
+                            <a class="dropdown-item" href="{{route('createCategory')}}">Create Category</a>
                            
-                       </li>      
+                       </li> 
+
+
+
+
+
+                        
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Sliders </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href='{{route("sliders")}}'>Sliders</a>
+                            <a class="dropdown-item" href='{{route("manageSliders")}}'>Manage Sliders</a>
+                           
+                       </li> 
+
+
+
+
+
+
+
+
+                                    
+                      
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="loader" class="feather-icon"></i><span class="hide-menu"> Announcement </span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href='{{route ("announcement")}}'>Announcement</a>
+                            <a class="dropdown-item" href='{{route("createAnnouncement")}}'>Create Announcement</a>
+                           
+                       </li> 
+
+
+
 
 
 

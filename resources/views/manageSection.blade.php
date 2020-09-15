@@ -1,21 +1,4 @@
 @include('includes/header')
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -40,20 +23,19 @@
 
  
             <div class="container-fluid">
-            
-           
                  <div class="col-lg-12">
-              
+                @include("alert")
                  @foreach($sections->data as $section)
                     <div class="card">
                    
                         <div class="card-body">
+         
                         <div class="text-right">
-                               <button type="button" class="btn btn-danger">Delete Section</button>
+                               <a href="/delete/section/{{$section->section_id}}"><button type="button" class="btn btn-danger">Delete Section</button></a>
                                         
                              </div>
                          <div class="row">
-                         
+                    
                            <div class="col-lg-4 col-md-4 col-sm-6">
                                    <h3>Title: {{$section->title}}  </h3>
                                   
@@ -73,8 +55,8 @@
                              @endforeach  
                          </div><br>    
                          <div class="">
-                               <button type="button" class="btn btn-warning">Edit Section</button>                 
-                             </div>  
+                               <a href="/edit/section/{{$section->section_id}}"><button type="button" class="btn btn-warning">Edit Section</button> </a>               
+                             </div>   
                         </div>         
                     </div>
                     
@@ -82,19 +64,8 @@
                
                     <!-- Column -->
                 </div><br/><br/>
-
-    
-               
-      
             </div><br/><br/><br/><br/>
-            
-        
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+         
             <footer class="footer text-center text-muted">
                 Copyright 2020. Internet Multimedia
             </footer>
