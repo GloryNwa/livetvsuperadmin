@@ -29,15 +29,18 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
            
-                <div class="row el-element-overlay">
+            <div class="container-fluid">
+         
+             <div class="row el-element-overlay">
                   
-                @foreach($stations->data as $station)
-                    <div class="col-lg-3 col-md-6">
-                   
+             @foreach($stations->data as $station)
+                     <div class="col-lg-3 col-md-6">
+                    
                         <div class="card">
+                       
                             <div class="el-card-item">
+                          
                                 <div class="el-card-avatar el-overlay-1"> <img src="{{$station->thumbnail}}" alt="banner" />
                                     <div class="el-overlay">
                                         <ul class="list-style-none el-info">
@@ -45,24 +48,27 @@
                                     </div>
                                     {{$station->stationName}}
                                 </div>
-                                <div class="el-card-content">
+                             <div class="el-card-content">
                                 <a href="/station/profile/{{$station->id}}"> <button class="btn btn-info">Edit</button></a>
                                 </div>
+                                
                             </div>
+                           
                         </div>
-                       
+                    
                     </div>
-                
-                   
-                   
                     @endforeach
+                   
+                   
+                
 
-
+                  
 
                 </div>
-             
-            </div>
-      
+              
+            </div><br><br><br><br><br><br><br><br><br><br>
+          
+    
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

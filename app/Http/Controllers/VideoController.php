@@ -429,7 +429,7 @@ if($response->status){
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories",
+          CURLOPT_URL => "http://apis.livetvmobile.org/api/view/categories?per_page=15&page=1",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,

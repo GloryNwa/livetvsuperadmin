@@ -79,7 +79,7 @@ Route::get('/manage/section','SectionController@manageSection')->name("manageSec
 Route::get('/edit/section/{id}','SectionController@editSection')->name("editSection");
 Route::post('/update/section','SectionController@updateSection')->name("updateSection");
 
-Route::post('/delete/section/{id}','SectionController@deleteSection')->name("deleteSection");
+Route::get('/delete/section/{id}','SectionController@deleteSection')->name("deleteSection");
 
 //////////////////////////////ANNOUNCEMENT//////////////////////////////////////////////////////////
 Route::get('/create/anouncement','AnnouncementController@createAnnouncement')->name("createAnnouncement");

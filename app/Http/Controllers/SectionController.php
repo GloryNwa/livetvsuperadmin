@@ -110,38 +110,23 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
 
 
 
-      public function editSection($id){
-//  dd($id);
-       $id  = 'section_id';
-        $token = Session::get('user');
-        $curl = curl_init();
+    
+/////////////////////////EDIT SECTION////////////////////////////////////////
 
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => "http://apis.livetvmobile.org/api/super/section/details",
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => "",
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS =>  $id,
-          CURLOPT_HTTPHEADER => array(
-            "Authorization: $token",
-            "Accept: application/json",
-            "Content-Type: application/x-www-form-urlencoded"
-          ),
-        ));
+public function editSection(Request $request, Messenger $messenger,$id){
 
-        $response = curl_exec($curl);
-        dd($response);
-        curl_close($curl);
-        $edit= json_decode($response);
-      
-         return view('editSection',['edit'=> $edit]);
 
-  }
+  $dataArr = array(
+    'section_id'=>$id
+ 
+  
+ );
 
+$response = $messenger->postApi($dataArr,'http://apis.livetvmobile.org/api/super/section/details');
+
+// dd($response);
+  return view('/editSection',['response' =>$response]);
+}
 
 //////////////////////////Update Section////////////////////////////////
 
@@ -170,7 +155,7 @@ public function deleteSection(Request $request, Messenger $messenger,$id){
               }else {
     
                 
-              return redirect('/edit/section/'.$request->video_id)->with('message', 'There was an error while trying to update Section ')->with("type","danger");
+              return redirect('/edit/section/'.$request->section_id)->with('message', 'There was an error while trying to update Section ')->with("type","danger");
       
               }
 
